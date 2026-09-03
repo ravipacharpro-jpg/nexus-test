@@ -1,0 +1,19 @@
+{
+  "name": "@nexus/termux-core",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "catalog:"
+  },
+  "dependencies": {
+    "@nexus-ai/core": "workspace:*"
+  },
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "provider": {
+    "opencode": {
+      "name": "OpenCode (keyless free gateway)",
+      "api": "https://opencode.ai/zen/v1",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": []
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "api": "https://openrouter.ai/api/v1",
+      "npm": "@openrouter/ai-sdk-provider",
+      "env": ["OPENROUTER_API_KEY"]
+    }
+  },
+  "model": "opencode/hy3-free"
+}

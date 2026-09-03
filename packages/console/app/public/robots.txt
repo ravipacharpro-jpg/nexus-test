@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow shared content pages
+Disallow: /s/
+Disallow: /share/
+
+Sitemap: https://nexus.ai/sitemap.xml
+Sitemap: https://nexus.ai/data/sitemap.xml

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "task_f449b4df-f0e3-4ae7-8893-d83cb55794f4",
+  "objective": "hii",
+  "status": "paused",
+  "steps": [
+    {
+      "id": "coder",
+      "kind": "coder",
+      "title": "Implement the required code changes",
+      "dependsOn": [],
+      "status": "dispatching",
+      "attempts": 0,
+      "maxAttempts": 2
+    },
+    {
+      "id": "review",
+      "kind": "reviewer",
+      "title": "Review the diff and diagnose remaining risks",
+      "dependsOn": [
+        "coder"
+      ],
+      "status": "dispatching",
+      "attempts": 0,
+      "maxAttempts": 2
+    },
+    {
+      "id": "test",
+      "kind": "tester",
+      "title": "Run focused verification and regression tests",
+      "dependsOn": [
+        "review"
+      ],
+      "status": "dispatching",
+      "attempts": 0,
+      "maxAttempts": 2
+    }
+  ],
+  "queuedInstructions": [
+    "hii",
+    "hi",
+    "hii",
+    "hii"
+  ],
+  "retryCount": 0,
+  "createdAt": "2026-08-31T19:49:30.983Z",
+  "updatedAt": "2026-08-31T19:53:53.105Z"
+}

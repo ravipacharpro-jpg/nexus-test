@@ -1,0 +1,27 @@
+{
+  "provider": {
+    "omniroute": {
+      "name": "OmniRoute (Free Gateway)",
+      "api": "http://localhost:20128/v1",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": ["OPENAI_API_KEY"],
+      "models": {
+        "auto": {
+          "id": "auto",
+          "name": "OmniRoute Auto (free)",
+          "reasoning": false,
+          "tool_call": true,
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "auto/coding": {
+          "id": "auto/coding",
+          "name": "OmniRoute Coding (free)",
+          "reasoning": false,
+          "tool_call": true,
+          "modalities": { "input": ["text"], "output": ["text"] }
+        }
+      }
+    }
+  },
+  "model": "omniroute/auto"
+}

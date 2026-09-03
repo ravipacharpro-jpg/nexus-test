@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NEXUS
+Exec=/opt/NEXUS/ai.nexus.desktop %U
+Terminal=false
+Type=Application
+Icon=ai.nexus.desktop
+StartupWMClass=ai.nexus.desktop
+NoDisplay=true
+Comment=Open source AI coding agent
+Categories=Development;

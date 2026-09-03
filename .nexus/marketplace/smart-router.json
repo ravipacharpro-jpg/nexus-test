@@ -1,0 +1,1 @@
+{"id":"smart-router","name":"Smart Router Agent","version":"0.1.0","author":"nexus-community","description":"Route tasks to the cheapest available free model based on the prompt length and complexity.","category":"agent","tags":["router","free-models","cost-optimization"],"source":"// Drop into SmartRouterAgent.ts.\nexport class SmartRouterAgent {}","addedAt":"2026-09-02"}

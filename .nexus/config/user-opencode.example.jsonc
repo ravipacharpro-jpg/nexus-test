@@ -1,0 +1,68 @@
+{
+  "$schema": "https://nexus.ai/config.json",
+  "provider": {
+    "opencode": {
+      "name": "NEXUS Free Gateway (keyless, no API key needed)",
+      "api": "https://opencode.ai/zen/v1",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": []
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "api": "https://openrouter.ai/api/v1",
+      "npm": "@openrouter/ai-sdk-provider",
+      "env": ["OPENROUTER_API_KEY"]
+    }
+  },
+  "model": "opencode/hy3-free",
+  "permission": {
+    "read": "allow",
+    "edit": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "bash": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "skill": "allow",
+    "mcp": "allow",
+    "firebase": "allow"
+  },
+  "references": {
+    "effect": {
+      "repository": "github.com/Effect-TS/effect-smol",
+      "description": "Use for Effect v4 and effect-smol implementation details"
+    },
+    "nexus-local": {
+      "path": "~/.local/share/nexus",
+      "description": "Contains nexus logs and data"
+    }
+  },
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest", "--isolated"]
+    },
+    "github": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    },
+    "firebase": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "firebase-tools", "mcp"]
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp"
+    }
+  },
+  "tools": {
+    "github-triage": false,
+    "github-pr-search": false
+  }
+}

@@ -1,0 +1,1 @@
+{"id":"smart-router","name":"Smart Router Agent","version":"0.1.0","author":"nexus-community","description":"Route to cheapest free model","category":"agent","tags":["router"],"source":"export class SmartRouterAgent {}","addedAt":"2026-09-02"}

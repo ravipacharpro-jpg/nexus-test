@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# husky pre-commit hook — runs the NEXUS quality gates before
+# any commit lands. Install via `bun run husky` or by symlinking
+# this file into .husky/pre-commit.
+#
+# This is the user-facing quality net. The same checks also run
+# in CI (.github/workflows/ci.yml will be added in a follow-up).
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+bash scripts/ci-checks.sh

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "version": "0.1.0",
+  "name": "@nexus-ai/assistant",
+  "description": "NEXUS assistant ecosystem: on-demand plugins for codegen, testing, deployment, hosting and Termux power tools",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@tsconfig/bun": "catalog:",
+    "@types/bun": "catalog:",
+    "playwright-core": "1.59.1"
+  }
+}

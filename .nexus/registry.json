@@ -1,0 +1,2207 @@
+{
+  "schema": "nexus-capability-registry/v1",
+  "description": "Single source of truth for every NEXUS capability. Orchestrator reads this to discover and route work. Add/remove via the extend skill.",
+  "mcps": [
+    {
+      "name": "playwright",
+      "type": "local",
+      "purpose": "Browser automation, screenshots, console checks",
+      "tags": [
+        "browser",
+        "test",
+        "verify"
+      ]
+    },
+    {
+      "name": "github",
+      "type": "local",
+      "purpose": "Repos, issues, PRs, releases",
+      "tags": [
+        "git",
+        "ci"
+      ]
+    },
+    {
+      "name": "firebase",
+      "type": "local",
+      "purpose": "Firebase Hosting/Auth admin",
+      "tags": [
+        "deploy",
+        "backend"
+      ]
+    },
+    {
+      "name": "supabase",
+      "type": "remote",
+      "purpose": "Supabase projects, migrations, edge functions",
+      "tags": [
+        "backend",
+        "db"
+      ]
+    },
+    {
+      "name": "cpanel",
+      "type": "local",
+      "purpose": "cPanel/Hostinger hosting ops",
+      "tags": [
+        "deploy",
+        "hosting"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "file": "3d-scene-developer",
+      "role": "'Web 3D visualization specialist who creates immersive 3D scenes, terrain models, point cloud visualizations, and interactive web experiences using Cesium, ArcGIS Scene Viewer, and modern 3D web frameworks.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "accessibility-auditor",
+      "role": "'Expert accessibility specialist who audits interfaces against WCAG standards, tests with assistive technologies, and ensures inclusive design. Defaults to finding barriers — if it''s not tested with a screen reader, it''s not accessible.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "account-strategist",
+      "role": "'Expert post-sale account strategist specializing in land-and-expand execution, stakeholder mapping, QBR facilitation, and net revenue retention. Turns closed deals into long-term platform relationships through systematic expansion planning and multi-threaded account development.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "accounts-payable-agent",
+      "role": "'Autonomous payment processing specialist that executes vendor payments, contractor invoices, and recurring bills across any payment rail — crypto, fiat, stablecoins. Integrates with AI agent workflows via tool calls.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ad-creative-strategist",
+      "role": "'Paid media creative specialist focused on ad copywriting, RSA optimization, asset group design, and creative testing frameworks across Google, Meta, Microsoft, and programmatic platforms. Bridges the gap between performance data and persuasive messaging.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "aeo-foundations-architect",
+      "role": "'Expert in AI Engine Optimization infrastructure — implements llms.txt, AI-aware robots.txt, token-budgeted content, structured Markdown availability, and agent discovery files so AI crawlers, citation engines, and browsing agents can find, parse, and act on your site'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "agentic-identity-trust-architect",
+      "role": "'Designs identity, authentication, and trust verification systems for autonomous AI agents operating in multi-agent environments. Ensures agents can prove who they are, what they''re authorized to do, and what they actually did.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "agentic-search-optimizer",
+      "role": "'Expert in WebMCP readiness and agentic task completion — audits whether AI agents can actually accomplish tasks on your site (book, buy, register, subscribe), implements WebMCP declarative and imperative patterns, and measures task completion rates across AI browsing agents'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "aging-parent-care-companion",
+      "role": "'Compassionate, HIPAA-aligned care coordination and decision-support agent for family caregivers managing an aging parent''s appointments, medications, care team communication, and their own caregiver wellbeing'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ai-citation-strategist",
+      "role": "'Expert in AI recommendation engine optimization (AEO/GEO) — audits brand visibility across ChatGPT, Claude, Gemini, and Perplexity, identifies why competitors get cited instead, and delivers content fixes that improve AI citations'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ai-data-remediation-engineer",
+      "role": "'\"Specialist in self-healing data pipelines — uses air-gapped local SLMs and semantic clustering to automatically detect, classify, and fix data anomalies at scale. Focuses exclusively on the remediation layer: intercepting bad data, generating deterministic fix logic via Ollama, and guaranteeing zero data loss. Not a general data engineer — a surgical specialist for when your data is broken and the pipeline can''t stop.\"'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ai-engineer",
+      "role": "'Expert AI/ML engineer specializing in machine learning model development, deployment, and integration into production systems. Focused on building intelligent features, data pipelines, and AI-powered applications with emphasis on practical, scalable solutions.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ai-generated-code-security-auditor",
+      "role": "'Security reviewer for AI-generated and vibe-coded apps — hunts the hardcoded secrets, broken row-level security, and prompt-injection sinks that coding assistants ship by default, then drives a scan, fix, and rescan loop with honest, CWE-mapped findings.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "analytics-reporter",
+      "role": "'Expert data analyst transforming raw data into actionable business insights. Creates dashboards, performs statistical analysis, tracks KPIs, and provides strategic decision support through data visualization and reporting.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "anthropologist",
+      "role": "'Expert in cultural systems, rituals, kinship, belief systems, and ethnographic method — builds culturally coherent societies that feel lived-in rather than invented'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "api-platform-engineer",
+      "role": "'Expert API platform engineer for public and partner APIs — contract-first design (OpenAPI/gRPC), versioning and deprecation policy, SDK generation, API gateway concerns (auth, rate limiting, quotas), and developer-portal DX.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "api-tester",
+      "role": "'Expert API testing specialist focused on comprehensive API validation, performance testing, and quality assurance across all systems and third-party integrations'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "app-store-optimizer",
+      "role": "'Expert app store marketing specialist focused on App Store Optimization (ASO), conversion rate optimization, and app discoverability'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "application-security-engineer",
+      "role": "'AppSec specialist who secures the software development lifecycle through threat modeling, secure code review, SAST/DAST integration, and developer security education that makes secure code the default.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "automation-governance-architect",
+      "role": "'Governance-first architect for business automations (n8n-first) who audits value, risk, and maintainability before implementation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "autonomous-optimization-architect",
+      "role": "'Intelligent system governor that continuously shadow-tests APIs for performance while enforcing strict financial and security guardrails against runaway costs.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "backend-architect",
+      "role": "'Senior backend architect specializing in scalable system design, database architecture, API development, and cloud infrastructure. Builds robust, secure, performant server-side applications and microservices'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "baidu-seo-specialist",
+      "role": "'Expert Baidu search optimization specialist focused on Chinese search engine ranking, Baidu ecosystem integration, ICP compliance, Chinese keyword research, and mobile-first indexing for the China market.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "behavioral-nudge-engine",
+      "role": "'Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation and success.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "bilibili-content-strategist",
+      "role": "'Expert Bilibili marketing specialist focused on UP主 growth, danmaku culture mastery, B站 algorithm optimization, community building, and branded content strategy for China''s leading video community platform.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "bim-gis-specialist",
+      "role": "'Integration specialist who bridges Building Information Modeling and Geographic Information Systems — Revit/IFC data conversion, indoor mapping, digital twin architecture, and facility management data models.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "blender-add-on-engineer",
+      "role": "'Blender tooling specialist - Builds Python add-ons, asset validators, exporters, and pipeline automations that turn repetitive DCC work into reliable one-click workflows'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "blockchain-security-auditor",
+      "role": "'Expert smart contract security auditor specializing in vulnerability detection, formal verification, exploit analysis, and comprehensive audit report writing for DeFi protocols and blockchain applications.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "book-co-author",
+      "role": "'Strategic thought-leadership book collaborator for founders, experts, and operators turning voice notes, fragments, and positioning into structured first-person chapters.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "bookkeeper-controller",
+      "role": "'Expert bookkeeper and controller specializing in day-to-day accounting operations, financial reconciliations, month-end close processes, and internal controls. Ensures the accuracy, completeness, and timeliness of financial records while maintaining GAAP compliance and audit readiness at all times.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "brand-guardian",
+      "role": "'Expert brand strategist and guardian specializing in brand identity development, consistency maintenance, and strategic brand positioning'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "business-strategist",
+      "role": "'Senior management consulting specialist for competitive analysis, market entry strategy, business model design, growth planning, organizational strategy, and strategic decision-making — translating complex market dynamics into clear, actionable strategies that create sustainable competitive advantage'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "carousel-growth-engine",
+      "role": "'Autonomous TikTok and Instagram carousel generation specialist. Analyzes any website URL with Playwright, generates viral 6-slide carousels via Gemini image generation, publishes directly to feed via Upload-Post API with auto trending music, fetches analytics, and iteratively improves through a data-driven learning loop.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "cartography-designer",
+      "role": "'Map aesthetics specialist who designs beautiful, readable, and effective maps — color theory, typography, label placement, basemap selection, and visual hierarchy for both print and web.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "change-management-consultant",
+      "role": "'Expert change management specialist using ADKAR, Kotter, and Prosci frameworks to guide organizations through technology implementations, restructuring, culture transformation, and M&A integration — managing resistance, building adoption, and ensuring changes stick long after go-live'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "chief-financial-officer",
+      "role": "'Strategic finance executive who governs capital allocation, treasury operations, financial planning, M&A finance, investor relations, and board reporting — translating financial complexity into clear decisions that drive business performance and stakeholder confidence.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "chief-of-staff",
+      "role": "'Master coordinator for founders and executives — filters noise, owns processes, enforces consistency, routes decisions, and positions outputs for impact so the boss can think clearly.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "china-e-commerce-operator",
+      "role": "'Expert China e-commerce operations specialist covering Taobao, Tmall, Pinduoduo, and JD ecosystems with deep expertise in product listing optimization, live commerce, store operations, 618/Double 11 campaigns, and cross-platform strategy.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "china-market-localization-strategist",
+      "role": "'Full-stack China market localization expert who transforms real-time trend signals into executable go-to-market strategies across Douyin, Xiaohongshu, WeChat, Bilibili, and beyond'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "civil-engineer",
+      "role": "'Expert civil and structural engineer with global standards coverage — Eurocode, DIN, ACI, AISC, ASCE, AS/NZS, CSA, GB, IS, AIJ, and more. Specializes in structural analysis, geotechnical design, construction documentation, building code compliance, and multi-standard international projects.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "clinical-evidence-agent",
+      "role": "'Evidence standards and clinical credibility framework for AI agents'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "cloud-security-architect",
+      "role": "'Cloud-native security specialist designing zero trust architectures, implementing defense-in-depth across AWS, Azure, and GCP, and securing infrastructure-as-code pipelines from day one.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "cms-developer",
+      "role": "'Drupal and WordPress specialist for theme development, custom plugins/modules, content architecture, and code-first CMS implementation'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "code-reviewer",
+      "role": "'Expert code reviewer who provides constructive, actionable feedback focused on correctness, maintainability, security, and performance — not style preferences.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "codebase-archaeologist",
+      "role": "'Multi-session, multi-tool drift detection specialist who audits codebases touched by several AI coding tools (Claude, Cursor, Copilot, Windsurf, etc.) over time, finding silent logic mismatches, dead code, and doc-vs-code divergence that no single session would ever notice on its own.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "codebase-onboarding-engineer",
+      "role": "'Expert developer onboarding specialist who helps new engineers understand unfamiliar codebases fast by reading source code, tracing code paths, and stating only facts grounded in the code.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "compliance-auditor",
+      "role": "'Expert technical compliance auditor specializing in SOC 2, ISO 27001, HIPAA, and PCI-DSS audits — from readiness assessment through evidence collection to certification.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "content-creator",
+      "role": "'Expert content strategist and creator for multi-platform campaigns. Develops editorial calendars, creates compelling copy, manages brand storytelling, and optimizes content for engagement across all digital channels.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "corporate-training-designer",
+      "role": "'Expert in enterprise training system design and curriculum development — proficient in training needs analysis, instructional design methodology, blended learning program design, internal trainer development, leadership programs, and training effectiveness evaluation and continuous optimization.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "cross-border-e-commerce-specialist",
+      "role": "'Full-funnel cross-border e-commerce strategist covering Amazon, Shopee, Lazada, AliExpress, Temu, and TikTok Shop operations, international logistics and overseas warehousing, compliance and taxation, multilingual listing optimization, brand globalization, and DTC independent site development.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "cultural-intelligence-strategist",
+      "role": "'CQ specialist that detects invisible exclusion, researches global context, and ensures software resonates authentically across intersectional identities.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "customer-success-manager",
+      "role": "'Strategic customer success specialist for onboarding, health scoring, QBR facilitation, churn prevention, expansion identification, and renewal management — driving net revenue retention by turning customers into long-term partners who achieve measurable outcomes'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "data-consolidation-agent",
+      "role": "'AI agent that consolidates extracted sales data into live reporting dashboards with territory, rep, and pipeline summaries'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "data-engineer",
+      "role": "'Expert data engineer specializing in building reliable data pipelines, lakehouse architectures, and scalable data infrastructure. Masters ETL/ELT, Apache Spark, dbt, streaming systems, and cloud data platforms to turn raw data into trusted, analytics-ready assets.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "data-privacy-officer",
+      "role": "'Corporate data privacy specialist and DPO who builds GDPR, CCPA, and global privacy compliance programs — covering data mapping, privacy impact assessments, consent management, breach response, vendor due diligence, and regulatory engagement.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "data-visualization-engineer",
+      "role": "'Expert data visualization engineer — chart-type selection by data and question, perceptually honest encodings, colorblind-safe data palettes, accessible and interactive charts, and rendering large datasets performantly with D3, Vega, and charting libraries.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "database-optimizer",
+      "role": "'Expert database specialist focusing on schema design, query optimization, indexing strategies, and performance tuning for PostgreSQL, MySQL, and modern databases like Supabase and PlanetScale.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "database-reliability-engineer",
+      "role": "'Expert database reliability engineer (DBRE) — high availability and replication, automated failover, backup and point-in-time recovery, zero-downtime online schema migrations, connection pooling, and disaster-recovery drills. Focused on keeping data safe and available, not query tuning.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "deal-strategist",
+      "role": "'Senior deal strategist specializing in MEDDPICC qualification, competitive positioning, and win planning for complex B2B sales cycles. Scores opportunities, exposes pipeline risk, and builds deal strategies that survive forecast review.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "desktop-app-engineer",
+      "role": "'Expert desktop application engineer for Electron and Tauri — secure IPC and process isolation, code signing and notarization, auto-update pipelines, native OS integration, and resource-footprint discipline.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "developer-advocate",
+      "role": "'Expert developer advocate specializing in building developer communities, creating compelling technical content, optimizing developer experience (DX), and driving platform adoption through authentic engineering engagement. Bridges product and engineering teams with external developers.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "developer-tooling-engineer",
+      "role": "'Expert developer-tooling and CLI engineer — building command-line tools and internal developer platforms with great DX: intuitive command design, helpful errors, shell completions, fast startup, cross-platform distribution, and scriptable, composable interfaces.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "devops-automator",
+      "role": "'Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline development, and cloud operations'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "discovery-coach",
+      "role": "'Coaches sales teams on elite discovery methodology — question design, current-state mapping, gap quantification, and call structure that surfaces real buying motivation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "document-generator",
+      "role": "'Expert document creation specialist who generates professional PDF, PPTX, DOCX, and XLSX files using code-based approaches with proper formatting, charts, and data visualization.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "douyin-strategist",
+      "role": "'Short-video marketing expert specializing in the Douyin platform, with deep expertise in recommendation algorithm mechanics, viral video planning, livestream commerce workflows, and full-funnel brand growth through content matrix strategies.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "drone-reality-mapping-specialist",
+      "role": "'Photogrammetry and reality capture expert who processes drone imagery into orthomosaics, digital terrain models, point clouds, and 3D meshes — bridging field capture and GIS-ready products.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "drupal-performance-engineer",
+      "role": "'Expert Drupal 10/11 performance engineer specializing in Core Web Vitals, render and dynamic page caching, BigPipe, cache tags and contexts, database query and Views optimization, CSS/JS aggregation, responsive images and lazy loading, CDN integration, and opcache/PHP-FPM tuning for fast, audit-passing sites'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "drupal-shopping-cart-engineer",
+      "role": "'Expert Drupal e-commerce engineer specializing in Drupal Commerce for product catalog management, payment gateway integration, checkout workflow design, order management, tax and promotion configuration, and high-reliability storefront delivery on Drupal 10/11'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "duplicate-pr",
+      "role": "",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "economy-designer",
+      "role": "'Virtual economy architect - Masters currency systems, sources and sinks, monetization modeling, inflation control, and data-driven economic balancing for live games'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "email-intelligence-engineer",
+      "role": "'Expert in extracting structured, reasoning-ready data from raw email threads for AI agents and automation systems'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "email-marketing-strategist",
+      "role": "'Expert email marketing strategist for CRM-driven campaigns, lifecycle automation, segmentation architecture, and deliverability. Designs sequences (welcome, nurture, reactivation, win-back, review, referral) grounded in 2025-2026 benchmarks, AI-driven personalization, and post-Apple MPP measurement.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "embedded-firmware-engineer",
+      "role": "'Specialist in bare-metal and RTOS firmware - ESP32/ESP-IDF, PlatformIO, Arduino, ARM Cortex-M, STM32 HAL/LL, Nordic nRF5/nRF Connect SDK, FreeRTOS, Zephyr'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "esg-sustainability-officer",
+      "role": "'Corporate sustainability strategist and ESG reporting specialist who builds environmental, social, and governance programs, manages disclosures, drives decarbonization initiatives, and aligns business strategy with stakeholder and regulatory expectations.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "evidence-collector",
+      "role": "'Screenshot-obsessed, fantasy-allergic QA specialist - Default to finding 3-5 issues, requires visual proof for everything'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "executive-summary-generator",
+      "role": "'Consultant-grade AI specialist trained to think and communicate like a senior strategy consultant. Transforms complex business inputs into concise, actionable executive summaries using McKinsey SCQA, BCG Pyramid Principle, and Bain frameworks for C-suite decision-makers.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "experiment-tracker",
+      "role": "'Expert project manager specializing in experiment design, execution tracking, and data-driven decision making. Focused on managing A/B tests, feature experiments, and hypothesis validation through systematic experimentation and rigorous analysis.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "fedramp-rmf-compliance-engineer",
+      "role": "'Expert FedRAMP and NIST Risk Management Framework compliance engineer specializing in both FedRAMP authorization pathways — the traditional Rev5 path (NIST 800-53 Rev 5 control implementation, System Security Plans, 3PAO assessment, agency authorization) and the modernized FedRAMP 20x path (Key Security Indicators, automated machine-readable validation, compliance-as-code) — plus the ATO process, continuous monitoring (ConMon), POA&M management, FIPS 199 categorization, authorization boundary diagrams, OSCAL machine-readable packages, and cloud security compliance for government and regulated industries'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "feedback-synthesizer",
+      "role": "'Expert in collecting, analyzing, and synthesizing user feedback from multiple channels to extract actionable product insights. Transforms qualitative feedback into quantitative priorities and strategic recommendations.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "feishu-integration-developer",
+      "role": "'Full-stack integration expert specializing in the Feishu (Lark) Open Platform — proficient in Feishu bots, mini programs, approval workflows, Bitable (multidimensional spreadsheets), interactive message cards, Webhooks, SSO authentication, and workflow automation, building enterprise-grade collaboration and automation solutions within the Feishu ecosystem.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "filament-optimization-specialist",
+      "role": "'Expert in restructuring and optimizing Filament PHP admin interfaces for maximum usability and efficiency. Focuses on impactful structural changes — not just cosmetic tweaks.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "finance-tracker",
+      "role": "'Expert financial analyst and controller specializing in financial planning, budget management, and business performance analysis. Maintains financial health, optimizes cash flow, and provides strategic financial insights for business growth.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "financial-analyst",
+      "role": "'Expert financial analyst specializing in financial modeling, forecasting, scenario analysis, and data-driven decision support. Transforms raw financial data into actionable business intelligence that drives strategic planning, investment decisions, and operational optimization.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "finops-engineer",
+      "role": "'Expert cloud cost engineer for AWS/GCP/Azure — cost allocation and tagging, rightsizing, commitment planning (reserved instances/savings plans), egress and storage optimization, and unit-economics dashboards that tie spend to business value.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "fp-a-analyst",
+      "role": "'Expert Financial Planning & Analysis (FP&A) analyst specializing in budgeting, variance analysis, financial planning, rolling forecasts, and strategic decision support. Bridges the gap between the numbers and the business narrative to drive operational performance and strategic resource allocation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "french-consulting-market-navigator",
+      "role": "'Navigate the French ESN/SI freelance ecosystem — margin models, platform mechanics (Malt, collective.work), portage salarial, rate positioning, and payment cycle realities'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "frontend-developer",
+      "role": "'Expert frontend developer specializing in modern web technologies, React/Vue/Angular frameworks, UI implementation, and performance optimization'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "game-audio-engineer",
+      "role": "'Interactive audio specialist - Masters FMOD/Wwise integration, adaptive music systems, spatial audio, and audio performance budgeting across all game engines'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "game-designer",
+      "role": "'Systems and mechanics architect - Masters GDD authorship, player psychology, economy balancing, and gameplay loop design across all engines and genres'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "gaussdb-expert-engineer",
+      "role": "'Expert database specialist focusing on GaussDB OLTP — Huawei''s self-developed enterprise-grade relational database (NOT GaussDB(DWS) OLAP, NOT GaussDB(for openGauss) cloud service, NOT GaussDB(for MySQL)). Covers schema design, distributed table design, query optimization, indexing, Ustore engine, and performance tuning for both distributed and centralized deployments.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "geoai-ml-engineer",
+      "role": "'Geospatial machine learning specialist who builds models for feature extraction, object detection, image segmentation, and land cover classification from satellite and aerial imagery.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "geographer",
+      "role": "'Expert in physical and human geography, climate systems, cartography, and spatial analysis — builds geographically coherent worlds where terrain, climate, resources, and settlement patterns make scientific sense'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "geoprocessing-specialist",
+      "role": "'ArcPy and Python toolbox expert who automates spatial workflows — builds .pyt toolboxes, Model Builder processes, batch geoprocessing automation, and custom analysis scripts for ArcGIS Pro.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "gis-analyst",
+      "role": "'Day-to-day GIS operator who creates maps, manages layers, performs spatial queries, and maintains geospatial data integrity across desktop and web environments.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "gis-qa-engineer",
+      "role": "'Quality assurance specialist who validates geospatial data integrity — topology checks, metadata audits, CRS consistency, accuracy assessment, and compliance verification.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "git-workflow-master",
+      "role": "'Expert in Git workflows, branching strategies, and version control best practices including conventional commits, rebasing, worktrees, and CI-friendly branch management.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "global-podcast-strategist",
+      "role": "'Expert podcast growth specialist focused on show positioning, audience development, content strategy, and monetisation. Transforms raw ideas into authoritative audio brands that compound listeners and revenue over time on Spotify, Apple Podcasts, and YouTube.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "godot-gameplay-scripter",
+      "role": "'Composition and signal integrity specialist - Masters GDScript 2.0, C# integration, node-based architecture, and type-safe signal design for Godot 4 projects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "godot-multiplayer-engineer",
+      "role": "'Godot 4 networking specialist - Masters the MultiplayerAPI, scene replication, ENet/WebRTC transport, RPCs, and authority models for real-time multiplayer games'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "godot-shader-developer",
+      "role": "'Godot 4 visual effects specialist - Masters the Godot Shading Language (GLSL-like), VisualShader editor, CanvasItem and Spatial shaders, post-processing, and performance optimization for 2D/3D effects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "government-digital-presales-consultant",
+      "role": "'Presales expert for China''s government digital transformation market (ToG), proficient in policy interpretation, solution design, bid document preparation, POC validation, compliance requirements (classified protection/cryptographic assessment/Xinchuang domestic IT), and stakeholder management — helping technical teams efficiently win government IT projects.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "grant-writer",
+      "role": "'Expert grant writing specialist for nonprofits, research institutions, and social enterprises — covering prospect research, letter of inquiry writing, full proposal development, budget narratives, federal and foundation grants, and post-award reporting to maximize funding success'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "growth-hacker",
+      "role": "'Expert growth strategist specializing in rapid user acquisition through data-driven experimentation. Develops viral loops, optimizes conversion funnels, and finds scalable growth channels for exponential business growth.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "healthcare-customer-service",
+      "role": "'Empathetic healthcare customer service specialist for patient support, billing inquiries, appointment management, insurance questions, complaint resolution, and seamless escalation to clinical or administrative staff'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "healthcare-innovation-strategist",
+      "role": "'Strategic narrative architect for healthcare founders operating at'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "healthcare-marketing-compliance-specialist",
+      "role": "'Expert in healthcare marketing compliance in China, proficient in the Advertising Law, Medical Advertisement Management Measures, Drug Administration Law, and related regulations — covering pharmaceuticals, medical devices, medical aesthetics, health supplements, and internet healthcare across content review, risk control, platform rule interpretation, and patient privacy protection, helping enterprises conduct effective health marketing within legal boundaries.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "historian",
+      "role": "'Expert in historical analysis, periodization, material culture, and historiography — validates historical coherence and enriches settings with authentic period detail grounded in primary and secondary sources'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "hospitality-guest-services",
+      "role": "'Comprehensive hospitality guest services specialist for hotels, resorts, restaurants, and event venues — covering reservations, check-in/check-out, concierge services, guest complaint resolution, loyalty program management, and post-stay follow-up to deliver exceptional guest experiences that drive loyalty and revenue'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "hr-onboarding",
+      "role": "'Comprehensive HR onboarding specialist for employee orientation, documentation management, compliance tracking, benefits enrollment, culture integration, and new hire support — delivering a seamless first-day-to-first-year experience that drives retention and productivity'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "identity-access-engineer",
+      "role": "'Expert identity engineer for OAuth 2.0/OIDC flows, enterprise SSO (SAML/OIDC) and SCIM provisioning, passkeys/WebAuthn, session architecture, and multi-tenant authorization with RBAC/ABAC.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "identity-graph-operator",
+      "role": "'Operates a shared identity graph that multiple AI agents resolve against. Ensures every agent in a multi-agent system gets the same canonical answer for \"who is this entity?\" - deterministically, even under concurrent writes.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "image-prompt-engineer",
+      "role": "'Expert photography prompt engineer specializing in crafting detailed, evocative prompts for AI image generation. Masters the art of translating visual concepts into precise language that produces stunning, professional-quality photography through generative AI tools.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "incident-responder",
+      "role": "'Digital forensics and incident response specialist who leads breach investigations, contains active threats, coordinates crisis response, and writes post-mortems that prevent recurrence.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "incident-response-commander",
+      "role": "'Expert incident commander specializing in production incident management, structured response coordination, post-mortem facilitation, SLO/SLI tracking, and on-call process design for reliable engineering organizations.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "inclusive-visuals-specialist",
+      "role": "'Representation expert who defeats systemic AI biases to generate culturally accurate, affirming, and non-stereotypical images and video.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "infrastructure-maintainer",
+      "role": "'Expert infrastructure specialist focused on system reliability, performance optimization, and technical operations management. Maintains robust, scalable infrastructure supporting business operations with security, performance, and cost efficiency.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "instagram-curator",
+      "role": "'Expert Instagram marketing specialist focused on visual storytelling, community building, and multi-format content optimization. Masters aesthetic development and drives meaningful engagement.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "internationalization-engineer",
+      "role": "'Expert i18n engineer for ICU MessageFormat, CLDR plural rules, RTL and bidirectional layouts, locale-aware date/number/currency formatting, string extraction pipelines, and pseudo-localization testing.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "investment-researcher",
+      "role": "'Expert investment researcher specializing in market research, due diligence, portfolio analysis, and asset valuation. Conducts rigorous fundamental and quantitative analysis to identify investment opportunities, assess risks, and support data-driven portfolio decisions across public equities, private markets, and alternative assets.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "iot-fleet-engineer",
+      "role": "'Expert IoT and edge fleet engineer — device provisioning and identity, MQTT/telemetry pipelines, staged over-the-air (OTA) firmware updates with rollback, edge compute, and observability across fleets of unreliable, intermittently-connected devices.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "it-service-manager",
+      "role": "'Expert IT service management specialist using ITIL 4 framework for service catalog design, incident and problem management, change control, SLA governance, CMDB maintenance, and continual service improvement — ensuring IT delivers reliable, measurable business value across any organization size'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "jira-workflow-steward",
+      "role": "'Expert delivery operations specialist who enforces Jira-linked Git workflows, traceable commits, structured pull requests, and release-safe branch strategy across software teams.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "knowledge-graph-engineer",
+      "role": "'Structures information and capabilities into interconnected nodes (entities) and edges (relationships) — enabling dynamic context navigation, modular competency chaining, lower token costs, and hallucination reduction.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "korean-business-navigator",
+      "role": "'Korean business culture for foreign professionals — 품의 decision process, nunchi reading, KakaoTalk business etiquette, hierarchy navigation, and relationship-first deal mechanics'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "kuaishou-strategist",
+      "role": "'Expert Kuaishou marketing strategist specializing in short-video content for China''s lower-tier city markets, live commerce operations, community trust building, and grassroots audience growth on 快手.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "language-translator",
+      "role": "'Real-time Spanish ↔ English translation specialist with cultural context, regional dialect awareness, travel phrase guidance, and tone-appropriate communication for everyday, business, and emergency situations'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "legal-billing-time-tracking",
+      "role": "'Comprehensive legal billing and time tracking specialist for accurate time capture, invoice generation, billing narrative writing, collections management, trust account compliance, and billing analysis — maximizing revenue recovery while maintaining client relationships and ethical compliance across any firm size or billing model'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "legal-client-intake",
+      "role": "'Comprehensive legal client intake specialist for qualifying prospects, collecting case information, scheduling consultations, managing conflict checks, and delivering attorney-ready intake summaries across any practice area and firm size'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "legal-compliance-checker",
+      "role": "'Expert legal and compliance specialist ensuring business operations, data handling, and content creation comply with relevant laws, regulations, and industry standards across multiple jurisdictions.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "legal-document-review",
+      "role": "'Comprehensive legal document review specialist for contracts, litigation documents, and real estate agreements — summarizing documents, flagging risk clauses, comparing contract versions, and checking compliance across any law firm size or practice area'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "level-designer",
+      "role": "'Spatial storytelling and flow specialist - Masters layout theory, pacing architecture, encounter design, and environmental narrative across all game engines'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "linkedin-content-creator",
+      "role": "'Expert LinkedIn content strategist focused on thought leadership, personal brand building, and high-engagement professional content. Masters LinkedIn''s algorithm and culture to drive inbound opportunities for founders, job seekers, developers, and anyone building a professional presence.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "livestream-commerce-coach",
+      "role": "'Veteran livestream e-commerce coach specializing in host training and live room operations across Douyin, Kuaishou, Taobao Live, and Channels, covering script design, product sequencing, paid-vs-organic traffic balancing, conversion closing techniques, and real-time data-driven optimization.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "llm-post-training-engineer",
+      "role": "'Evidence-driven owner for SFT, preference optimization, RLHF/RLVR, MoE post-training, and the release gates that turn a checkpoint into a defensible model change.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "loan-officer-assistant",
+      "role": "'Comprehensive loan officer assistant for mortgage and lending professionals — covering borrower intake, pre-qualification, document collection, pipeline management, compliance tracking, rate quoting, and closing coordination across residential, commercial, and consumer lending'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "lsp-index-engineer",
+      "role": "'Language Server Protocol specialist building unified code intelligence systems through LSP client orchestration and semantic indexing'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "m-a-integration-manager",
+      "role": "'Mergers and acquisitions integration specialist who designs and executes post-merger integration programs — covering Day 1 readiness, 100-day planning, synergy tracking, cultural integration, functional workstream coordination, and transition service agreement management.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "macos-spatial-metal-engineer",
+      "role": "'Native Swift and Metal specialist building high-performance 3D rendering systems and spatial computing experiences for macOS and Vision Pro'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "maintainer",
+      "role": "Codebase guardian — keeps code stable, professional, and bug-free. Removes dead/duplicate/over-engineered code, updates outdated patterns and dependencies, and enforces lint/typecheck/test gates before anything is called done.",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "master-plan-architect",
+      "role": "'Master planning architect, technical educator, and ruthless plan critic who specializes in deep architectural teaching, Red Teaming / risk critique, and crafting comprehensive Implementation Plans in Markdown with ZERO code execution.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "mcp-builder",
+      "role": "'Expert Model Context Protocol developer who designs, builds, and tests MCP servers that extend AI agent capabilities with custom tools, resources, and prompts.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "medical-billing-coding-specialist",
+      "role": "'Expert medical billing and coding specialist for ICD-10-CM/PCS, CPT, and HCPCS coding, claim submission, denial management, revenue cycle optimization, compliance auditing, and payer contract analysis — maximizing clean claim rates and revenue recovery for healthcare providers of all sizes'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "meeting-notes-specialist",
+      "role": "'Extract structured decisions, action items, and open questions from meeting transcripts or rough notes into a clean 4-section summary.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "minimal-change-engineer",
+      "role": "'Engineering specialist focused on minimum-viable diffs — fixes only what was asked, refuses scope creep, prefers three similar lines over a premature abstraction. The discipline that prevents bug-fix PRs from becoming refactor avalanches.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "mobile-app-builder",
+      "role": "'Specialized mobile application developer with expertise in native iOS/Android development and cross-platform frameworks'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "mobile-release-engineer",
+      "role": "'Expert mobile release and distribution engineer for iOS and Android — code signing, provisioning, fastlane pipelines, App Store Connect and Play Console submission, phased rollouts, and crash-triaged release health.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "model-qa-specialist",
+      "role": "'Independent model QA expert who audits ML and statistical models end-to-end - from documentation review and data reconstruction to replication, calibration testing, interpretability analysis, performance monitoring, and audit-grade reporting.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "multi-agent-systems-architect",
+      "role": "'Systems architect specializing in the design, coordination, and governance of multi-agent AI pipelines — covering topology selection, context management, inter-agent trust, failure recovery, human-in-the-loop gating, and observability for production-grade agent systems.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "multi-platform-publisher",
+      "role": "'Expert orchestrator for one-click Chinese blog publishing. Routes a single article to 知乎 / 小红书 / CSDN / B站 / 公众号 / 掘金 via Wechatsync (main channel) with xhs-mcp and biliup as specialized fallbacks. Handles per-platform content adaptation, draft-first publishing, rate control, and risk-avoidance. Does NOT auto-publish — always stops at draft for human review.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "narrative-designer",
+      "role": "'Story systems and dialogue architect - Masters GDD-aligned narrative design, branching dialogue, lore architecture, and environmental storytelling across all game engines'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "narratologist",
+      "role": "'Expert in narrative theory, story structure, character arcs, and literary analysis — grounds advice in established frameworks from Propp to Campbell to modern narratology'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "network-engineer",
+      "role": "'Expert network engineer for Cisco IOS/IOS-XE, Cisco ASA/FTD, Juniper Junos, and Palo Alto PAN-OS routing, switching, firewalling, and troubleshooting.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "offer-lead-gen-strategist",
+      "role": "'Top-of-funnel architect who designs irresistible offers and lead magnets that attract qualified buyers at scale. Specializes in value-equation offer construction, lead magnet typology, multi-channel lead generation, and compounding reach through customers, employees, agencies, and affiliates.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "operations-manager",
+      "role": "'Business operations specialist who applies Lean, Six Sigma, and systems thinking to process mapping, capacity planning, KPI governance, vendor management, and organizational efficiency — turning operational complexity into repeatable, measurable performance.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "orchestrator",
+      "role": "Coordination planner — given a goal, decomposes it into steps, assigns the right specialist subagent to each, and lays out MCP/browser tool usage plus the verification gate. Use it to plan any non-trivial task before executing.",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "organizational-psychologist",
+      "role": "'Applied organizational psychologist who diagnoses team dynamics, psychological safety, burnout risk, and culture health — using evidence-based frameworks to help leaders build high-performing, resilient, and psychologically safe organizations.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "orgscript-engineer",
+      "role": "'Expert in designing, parsing, and implementing OrgScript grammar, AST validation, and business logic definitions.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "outbound-strategist",
+      "role": "'Signal-based outbound specialist who designs multi-channel prospecting sequences, defines ICPs, and builds pipeline through research-driven personalization — not volume.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "paid-media-auditor",
+      "role": "'Comprehensive paid media auditor who systematically evaluates Google Ads, Microsoft Ads, and Meta accounts across 200+ checkpoints spanning account structure, tracking, bidding, creative, audiences, and competitive positioning. Produces actionable audit reports with prioritized recommendations and projected impact.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "paid-social-strategist",
+      "role": "'Cross-platform paid social advertising specialist covering Meta (Facebook/Instagram), LinkedIn, TikTok, Pinterest, X, and Snapchat. Designs full-funnel social ad programs from prospecting through retargeting with platform-specific creative and audience strategies.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "payments-billing-engineer",
+      "role": "'Expert payments engineer for PSP integrations (Stripe, Adyen, Braintree, PayPal), idempotent payment flows, webhook processing, subscription billing, SCA/3DS, PCI scope reduction, and financial reconciliation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "penetration-tester",
+      "role": "'Offensive security specialist conducting authorized penetration tests, red team operations, and vulnerability assessments across networks, web applications, and cloud infrastructure.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "performance-benchmarker",
+      "role": "'Expert performance testing and optimization specialist focused on measuring, analyzing, and improving system performance across all applications and infrastructure'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "persona-walkthrough-specialist",
+      "role": "'Simulate cognitive walkthroughs of web pages from a defined persona''s psychological perspective — captures emotional reactions and rational thought at each scroll position, then delivers structured CRO reports grounded in LIFT, Cialdini, and Fogg frameworks'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "personal-growth-mentor",
+      "role": "'Cross-domain personal development mentor for goal clarity, habit design, strategic decisions, and accountability without motivational fluff.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "pipeline-analyst",
+      "role": "'Revenue operations analyst specializing in pipeline health diagnostics, deal velocity analysis, forecast accuracy, and data-driven sales coaching. Turns CRM data into actionable pipeline intelligence that surfaces risks before they become missed quarters.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "podcast-strategist",
+      "role": "'Content strategy and operations expert for the Chinese podcast market, with deep expertise in Xiaoyuzhou, Ximalaya, and other major audio platforms, covering show positioning, audio production, audience growth, multi-platform distribution, and monetization to help podcast creators build sticky audio content brands.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ppc-campaign-strategist",
+      "role": "'Senior paid media strategist specializing in large-scale search, shopping, and performance max campaign architecture across Google, Microsoft, and Amazon ad platforms. Designs account structures, budget allocation frameworks, and bidding strategies that scale from $10K to $10M+ monthly spend.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "pr-communications-manager",
+      "role": "'Strategic public relations and communications specialist for media relations, press releases, crisis communications, executive thought leadership, brand reputation management, and integrated communications planning — building and protecting reputations through earned media, storytelling, and proactive narrative control'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "pricing-analyst",
+      "role": "'Specialized pricing analyst who develops optimal pricing models through market research, competitor analysis, cost structure evaluation, and margin optimization — turning pricing from guesswork into a data-driven competitive advantage.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "privacy-engineer",
+      "role": "'Expert privacy engineer who implements privacy in code — PII discovery and classification, data minimization, consent enforcement at the API layer, automated DSAR and deletion across services, pseudonymization/tokenization, and retention automation. Builds the technical controls a privacy policy only promises.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "private-domain-operator",
+      "role": "'Expert in building enterprise WeChat (WeCom) private domain ecosystems, with deep expertise in SCRM systems, segmented community operations, Mini Program commerce integration, user lifecycle management, and full-funnel conversion optimization.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "product-manager",
+      "role": "'Holistic product leader who owns the full product lifecycle — from discovery and strategy through roadmap, stakeholder alignment, go-to-market, and outcome measurement. Bridges business goals, user needs, and technical reality to ship the right thing at the right time.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "programmatic-display-buyer",
+      "role": "'Display advertising and programmatic media buying specialist covering managed placements, Google Display Network, DV360, trade desk platforms, partner media (newsletters, sponsored content), and ABM display strategies via platforms like Demandbase and 6Sense.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "project-shepherd",
+      "role": "'Expert project manager specializing in cross-functional project coordination, timeline management, and stakeholder alignment. Focused on shepherding projects from conception to completion while managing resources, risks, and communications across multiple teams and departments.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "prompt-engineer",
+      "role": "'Specialist in crafting, testing, and systematically optimizing prompts for LLMs — turning vague instructions into reliable, production-grade AI behaviors.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "proposal-strategist",
+      "role": "'Strategic proposal architect who transforms RFPs and sales opportunities into compelling win narratives. Specializes in win theme development, competitive positioning, executive summary craft, and building proposals that persuade rather than merely comply.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "psychologist",
+      "role": "'Expert in human behavior, personality theory, motivation, and cognitive patterns — builds psychologically credible characters and interactions grounded in clinical and research frameworks'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "rag-pipeline-engineer",
+      "role": "'Production RAG specialist focused on chunking strategy, retrieval quality, hybrid search, re-ranking, and eval-driven iteration. Builds pipelines that actually retrieve the right context — not just pipelines that run.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "rapid-prototyper",
+      "role": "'Specialized in ultra-fast proof-of-concept development and MVP creation using efficient tools and frameworks'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "real-estate-buyer-seller",
+      "role": "'Comprehensive real estate agent assistant for buyer representation, seller representation, listing management, offer negotiation, transaction coordination, and closing support — delivering a world-class client experience from first showing to final closing across residential and investment real estate'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "reality-checker",
+      "role": "'Stops fantasy approvals, evidence-based certification - Default to \"NEEDS WORK\", requires overwhelming proof for production readiness'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "realtime-collaboration-engineer",
+      "role": "'Expert realtime systems engineer for WebSocket/SSE infrastructure, presence, CRDT and OT-based collaborative editing, offline-first sync engines, and fan-out scaling with reconnect-safe protocols.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "recruitment-specialist",
+      "role": "'Expert recruitment operations and talent acquisition specialist — skilled in China''s major hiring platforms, talent assessment frameworks, and labor law compliance. Helps companies efficiently attract, screen, and retain top talent while building a competitive employer brand.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "reddit-community-builder",
+      "role": "'Expert Reddit marketing specialist focused on authentic community engagement, value-driven content creation, and long-term relationship building. Masters Reddit culture navigation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "report-distribution-agent",
+      "role": "'AI agent that automates distribution of consolidated sales reports to representatives based on territorial parameters'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "research-synthesist",
+      "role": "'Expert in literature review, source evaluation, and evidence synthesis — turns a scattered pile of sources into a structured, honestly-weighted map of what the evidence actually supports'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "resume-tailor",
+      "role": "'Candidate-side resume optimization specialist who analyzes job descriptions, maps real experience to role requirements, improves ATS keyword alignment, and rewrites bullets without fabricating qualifications.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "retail-customer-returns",
+      "role": "'Comprehensive retail customer returns specialist for processing returns, exchanges, and refunds across in-store, online, and omnichannel retail — handling policy enforcement, fraud prevention, customer retention, vendor returns, and returns analytics to maximize recovery while preserving customer loyalty'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "roblox-avatar-creator",
+      "role": "'Roblox UGC and avatar pipeline specialist - Masters Roblox''s avatar system, UGC item creation, accessory rigging, texture standards, and the Creator Marketplace submission pipeline'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "roblox-experience-designer",
+      "role": "'Roblox platform UX and monetization specialist - Masters engagement loop design, DataStore-driven progression, Roblox monetization systems (Passes, Developer Products, UGC), and player retention for Roblox experiences'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "roblox-systems-scripter",
+      "role": "'Roblox platform engineering specialist - Masters Luau, the client-server security model, RemoteEvents/RemoteFunctions, DataStore, and module architecture for scalable Roblox experiences'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "rust-refactoring-specialist",
+      "role": "'Expert Rust engineer for repository-scale refactoring, safe renames, module restructuring, duplication removal, panic hardening, ownership improvements, and compiler or Clippy remediation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sales-coach",
+      "role": "'Expert sales coaching specialist focused on rep development, pipeline review facilitation, call coaching, deal strategy, and forecast accuracy. Makes every rep and every deal better through structured coaching methodology and behavioral feedback.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sales-data-extraction-agent",
+      "role": "'AI agent specialized in monitoring Excel files and extracting key sales metrics (MTD, YTD, Year End) for internal live reporting'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sales-engineer",
+      "role": "'Senior pre-sales engineer specializing in technical discovery, demo engineering, POC scoping, competitive battlecards, and bridging product capabilities to business outcomes. Wins the technical decision so the deal can close.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sales-outreach",
+      "role": "'Consultative B2B sales outreach specialist for cold prospecting, lead follow-up, objection handling, proposal writing, and pipeline management — combining data-driven targeting with genuine relationship-building to open doors and close deals'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "salesforce-architect",
+      "role": "'Solution architecture for Salesforce platform — multi-cloud design, integration patterns, governor limits, deployment strategy, and data model governance for enterprise-scale orgs'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "search-query-analyst",
+      "role": "'Specialist in search term analysis, negative keyword architecture, and query-to-intent mapping. Turns raw search query data into actionable optimizations that eliminate waste and amplify high-intent traffic across paid search accounts.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "search-relevance-engineer",
+      "role": "'Expert search engineer for Elasticsearch and OpenSearch — index and analyzer design, BM25 query tuning, hybrid lexical+vector retrieval, and judgment-based relevance evaluation with nDCG and online experiments.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "secrets-credential-hygiene-engineer",
+      "role": "'Owns the full lifecycle of secrets and credentials — detection, prevention, vaulting, rotation, and leak response — so an application runs on short-lived, least-privilege credentials that are never in the code and are already rotated by the time a leak is found.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "section-508-accessibility-specialist",
+      "role": "'Expert U.S. federal Section 508 accessibility engineer (the 508 legal baseline is WCAG 2.0 Level AA; WCAG 2.1/2.2 AA are recommended best practice, and ADA Title II requires WCAG 2.1 AA for state/local government) specializing in accessible web development, ARIA implementation, screen reader testing (JAWS/NVDA/VoiceOver), keyboard navigation, color contrast, accessible forms and PDFs, VPAT/ACR authoring, automated and manual auditing (axe/WAVE/Lighthouse), and remediation for government and enterprise sites'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "security-architect",
+      "role": "'Expert security architect specializing in threat modeling, secure-by-design architecture, trust-boundary analysis, defense-in-depth, and risk-based security reviews across web, API, cloud-native, and distributed systems. Designs the security model; hands code-level SAST/DAST and SDLC work to the AppSec Engineer.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "senior-developer",
+      "role": "'Premium implementation specialist - Masters Laravel/Livewire/FluxUI, advanced CSS, Three.js integration'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "senior-project-manager",
+      "role": "'Converts specs to tasks and remembers previous projects. Focused on realistic scope, no background processes, exact spec requirements'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "senior-secops-engineer",
+      "role": "'Defensive application security specialist who scans every code submission for secrets and sensitive data exposure before anything else, then implements or audits security controls following the organization''s security standard — covering authentication, authorization, tokens, cookies, HTTP headers, CORS, rate limiting, CSP, secrets management, input validation, and secure logging.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "seo-specialist",
+      "role": "'Expert search engine optimization strategist specializing in technical SEO, content optimization, link authority building, and organic search growth. Drives sustainable traffic through data-driven search strategies.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "short-video-editing-coach",
+      "role": "'Hands-on short-video editing coach covering the full post-production pipeline, with mastery of CapCut Pro, Premiere Pro, DaVinci Resolve, and Final Cut Pro across composition and camera language, color grading, audio engineering, motion graphics and VFX, subtitle design, multi-platform export optimization, editing workflow efficiency, and AI-assisted editing.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "social-media-strategist",
+      "role": "'Expert social media strategist for LinkedIn, Twitter, and professional platforms. Creates cross-platform campaigns, builds communities, manages real-time engagement, and develops thought leadership strategies.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "software-architect",
+      "role": "'Expert software architect specializing in system design, domain-driven design, architectural patterns, and technical decision-making for scalable, maintainable systems.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "solidity-smart-contract-engineer",
+      "role": "'Expert Solidity developer specializing in EVM smart contract architecture, gas optimization, upgradeable proxy patterns, DeFi protocol development, and security-first contract design across Ethereum and L2 chains.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "solution-engineer",
+      "role": "'Hands-on GIS prototype builder who takes strategy from Technical Consultant and turns it into working demos, proof-of-concepts, and technical validations across the full Esri and open-source stack.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sovereign-health-systems-agent",
+      "role": "'Government health mandate engagement framework for AI agents'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "spatial-data-engineer",
+      "role": "'ETL specialist who transforms messy geospatial data from any source into clean, standardized, production-ready datasets — format conversion, CRS reprojection, attribute normalization, and automated pipelines.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "spatial-data-scientist",
+      "role": "'Advanced spatial analytics specialist who applies statistical modeling, spatial econometrics, clustering, and predictive analytics to geospatial data — finding patterns that aren''t visible on a map.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sprint-prioritizer",
+      "role": "'Expert product manager specializing in agile sprint planning, feature prioritization, and resource allocation. Focused on maximizing team velocity and business value delivery through data-driven prioritization frameworks.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "sre-site-reliability-engineer",
+      "role": "'Expert site reliability engineer specializing in SLOs, error budgets, observability, chaos engineering, and toil reduction for production systems at scale.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "statistician",
+      "role": "'Expert in quantitative research methodology, experimental design, and statistical inference — pressure-tests claims, designs sound studies, and separates real signal from noise, chance, and bias'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "strategy-duel-agent",
+      "role": "'Conducts live strategy duels using game theory and the 36 Chinese stratagems'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "studio-operations",
+      "role": "'Expert operations manager specializing in day-to-day studio efficiency, process optimization, and resource coordination. Focused on ensuring smooth operations, maintaining productivity standards, and supporting all teams with the tools and processes needed for success.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "studio-producer",
+      "role": "'Senior strategic leader specializing in high-level creative and technical project orchestration, resource allocation, and multi-project portfolio management. Focused on aligning creative vision with business objectives while managing complex cross-functional initiatives and ensuring optimal studio operations.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "study-abroad-advisor",
+      "role": "'Full-spectrum study abroad planning expert covering the US, UK, Canada, Australia, Europe, Hong Kong, and Singapore — proficient in undergraduate, master''s, and PhD application strategy, school selection, essay coaching, profile enhancement, standardized test planning, visa preparation, and overseas life adaptation, helping Chinese students craft personalized end-to-end study abroad plans.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "supply-chain-strategist",
+      "role": "'Expert supply chain management and procurement strategy specialist — skilled in supplier development, strategic sourcing, quality control, and supply chain digitalization. Grounded in China''s manufacturing ecosystem, helps companies build efficient, resilient, and sustainable supply chains.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "support-responder",
+      "role": "'Expert customer support specialist delivering exceptional customer service, issue resolution, and user experience optimization. Specializes in multi-channel support, proactive customer care, and turning support interactions into positive brand experiences.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "tax-strategist",
+      "role": "'Expert tax strategist specializing in tax optimization, multi-jurisdictional compliance, transfer pricing, and strategic tax planning. Navigates complex tax codes to minimize liability while ensuring full regulatory compliance across local, state, federal, and international tax regimes.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "technical-artist",
+      "role": "'Art-to-engine pipeline specialist - Masters shaders, VFX systems, LOD pipelines, performance budgeting, and cross-engine asset optimization'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "technical-consultant",
+      "role": "'Strategic GIS advisor who translates business problems into geospatial solutions — gap analysis, technology roadmaps, RFP responses, and digital transformation strategy across Esri and open-source ecosystems.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "technical-writer",
+      "role": "'Expert technical writer specializing in developer documentation, API references, README files, and tutorials. Transforms complex engineering concepts into clear, accurate, and engaging docs that developers actually read and use.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "terminal-integration-specialist",
+      "role": "'Terminal emulation, text rendering optimization, and SwiftTerm integration for modern Swift applications'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "test-automation-engineer",
+      "role": "'Expert end-to-end test automation engineer for Playwright and Cypress — resilient selectors, flake elimination, isolated test data, CI parallelization, and trace-driven failure debugging.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "test-results-analyzer",
+      "role": "'Expert test analysis specialist focused on comprehensive test result evaluation, quality metrics analysis, and actionable insight generation from testing activities'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "threat-detection-engineer",
+      "role": "'Expert detection engineer specializing in SIEM rule development, MITRE ATT&CK coverage mapping, threat hunting, alert tuning, and detection-as-code pipelines for security operations teams.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "threat-intelligence-analyst",
+      "role": "'Cyber threat intelligence specialist who tracks adversary groups, maps attack campaigns to MITRE ATT&CK, produces actionable intelligence reports, and builds detection rules that catch real threats.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "tiktok-strategist",
+      "role": "'Expert TikTok marketing specialist focused on viral content creation, algorithm optimization, and community building. Masters TikTok''s unique culture and features for brand growth.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "tool-evaluator",
+      "role": "'Expert technology assessment specialist focused on evaluating, testing, and recommending tools, software, and platforms for business use and productivity optimization'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "tracking-measurement-specialist",
+      "role": "'Expert in conversion tracking architecture, tag management, and attribution modeling across Google Tag Manager, GA4, Google Ads, Meta CAPI, LinkedIn Insight Tag, and server-side implementations. Ensures every conversion is counted correctly and every dollar of ad spend is measurable.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "trend-researcher",
+      "role": "'Expert market intelligence analyst specializing in identifying emerging trends, competitive analysis, and opportunity assessment. Focused on providing actionable insights that drive product strategy and innovation decisions.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "triage",
+      "role": "",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "twitter-engager",
+      "role": "'Expert Twitter marketing specialist focused on real-time engagement, thought leadership building, and community-driven growth. Builds brand authority through authentic conversation participation and viral thread creation.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ui-designer",
+      "role": "'Expert UI designer specializing in visual design systems, component libraries, and pixel-perfect interface creation. Creates beautiful, consistent, accessible user interfaces that enhance UX and reflect brand identity'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ui-finish-gate-reviewer",
+      "role": "'Product-interface reviewer who catches generic, interchangeable UI before it ships by grounding critique in real product evidence, a written design contract, and a hard implementation finish gate.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unity-architect",
+      "role": "'Data-driven modularity specialist - Masters ScriptableObjects, decoupled systems, and single-responsibility component design for scalable Unity projects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unity-editor-tool-developer",
+      "role": "'Unity editor automation specialist - Masters custom EditorWindows, PropertyDrawers, AssetPostprocessors, ScriptedImporters, and pipeline automation that saves teams hours per week'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unity-multiplayer-engineer",
+      "role": "'Networked gameplay specialist - Masters Netcode for GameObjects, Unity Gaming Services (Relay/Lobby), client-server authority, lag compensation, and state synchronization'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unity-shader-graph-artist",
+      "role": "'Visual effects and material specialist - Masters Unity Shader Graph, HLSL, URP/HDRP rendering pipelines, and custom pass authoring for real-time visual effects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unreal-multiplayer-architect",
+      "role": "'Unreal Engine networking specialist - Masters Actor replication, GameMode/GameState architecture, server-authoritative gameplay, network prediction, and dedicated server setup for UE5'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unreal-systems-engineer",
+      "role": "'Performance and hybrid architecture specialist - Masters C++/Blueprint continuum, Nanite geometry, Lumen GI, and Gameplay Ability System for AAA-grade Unreal Engine projects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unreal-technical-artist",
+      "role": "'Unreal Engine visual pipeline specialist - Masters the Material Editor, Niagara VFX, Procedural Content Generation, and the art-to-engine pipeline for UE5 projects'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "unreal-world-builder",
+      "role": "'Open-world and environment specialist - Masters UE5 World Partition, Landscape, procedural foliage, HLOD, and large-scale level streaming for seamless open-world experiences'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "uswds-developer",
+      "role": "'Expert U.S. Web Design System frontend developer specializing in USWDS components and design tokens, accessible-by-default patterns, responsive government UI, Sass settings/theming, the federal design language, integration into CMS platforms (Drupal/WordPress), and compliance with 21st Century IDEA and the Federal Website Standards'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ux-architect",
+      "role": "'Technical architecture and UX specialist who provides developers with solid foundations, CSS systems, and clear implementation guidance'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "ux-researcher",
+      "role": "'Expert user experience researcher specializing in user behavior analysis, usability testing, and data-driven design insights. Provides actionable research findings that improve product usability and user satisfaction'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "video-optimization-specialist",
+      "role": "'Video marketing strategist specializing in YouTube algorithm optimization, audience retention, chaptering, thumbnail concepts, and cross-platform video syndication.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "video-streaming-engineer",
+      "role": "'Expert video streaming engineer for adaptive bitrate delivery — HLS/DASH packaging, ffmpeg transcode ladders, CMAF low-latency, DRM, CDN delivery, and QoE-driven player tuning.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "visionos-spatial-engineer",
+      "role": "'Native visionOS spatial computing, SwiftUI volumetric interfaces, and Liquid Glass design implementation'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "visual-storyteller",
+      "role": "'Expert visual communication specialist focused on creating compelling visual narratives, multimedia content, and brand storytelling through design. Specializes in transforming complex information into engaging visual stories that connect with audiences and drive emotional engagement.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "voice-ai-integration-engineer",
+      "role": "'Expert in building end-to-end speech transcription pipelines using Whisper-style models and cloud ASR services — from raw audio ingestion through preprocessing, transcript cleanup, subtitle generation, speaker diarization, and structured downstream integration into apps, APIs, and CMS platforms.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "web-gis-developer",
+      "role": "'Full-stack web GIS engineer who builds interactive mapping applications — MapLibre GL JS, ArcGIS JS API, Leaflet, real-time dashboards, REST API integration, and geospatial web services.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "webassembly-engineer",
+      "role": "'Expert WebAssembly engineer — compiling Rust/C++/Go to Wasm, JS interop and the boundary marshalling cost, WASI and server-side runtimes (Wasmtime/Wasmer), the component model, and near-native performance tuning.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "wechat-mini-program-developer",
+      "role": "'Expert WeChat Mini Program developer specializing in 小程序 development with WXML/WXSS/WXS, WeChat API integration, payment systems, subscription messaging, and the full WeChat ecosystem.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "wechat-official-account-manager",
+      "role": "'Expert WeChat Official Account (OA) strategist specializing in content marketing, subscriber engagement, and conversion optimization. Masters multi-format content and builds loyal communities through consistent value delivery.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "weibo-strategist",
+      "role": "'Full-spectrum operations expert for Sina Weibo, with deep expertise in trending topic mechanics, Super Topic community management, public sentiment monitoring, fan economy strategies, and Weibo advertising, helping brands achieve viral reach and sustained growth on China''s leading public discourse platform.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "whimsy-injector",
+      "role": "'Expert creative specialist focused on adding personality, delight, and playful elements to brand experiences. Creates memorable, joyful interactions that differentiate brands through unexpected moments of whimsy'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "wordpress-performance-engineer",
+      "role": "'Expert WordPress performance engineer specializing in Core Web Vitals, object caching (Redis/Memcached), page caching, database and WP_Query optimization, the Transients API, asset minification/deferral/critical CSS, image optimization and lazy loading, CDN integration, plugin performance auditing, and PHP-FPM/opcache tuning for fast, audit-passing sites'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "wordpress-shopping-cart-engineer",
+      "role": "'Expert WordPress e-commerce engineer specializing in WooCommerce for product catalog management, payment gateway integration, checkout customization, order management, tax and coupon configuration, and conversion-optimized storefront delivery on WordPress'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "workflow-architect",
+      "role": "'Workflow design specialist who maps complete workflow trees for every system, user journey, and agent interaction — covering happy paths, all branch conditions, failure modes, recovery paths, handoff contracts, and observable states to produce build-ready specs that agents can implement against and QA can test against.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "workflow-optimizer",
+      "role": "'Expert process improvement specialist focused on analyzing, optimizing, and automating workflows across all business functions for maximum productivity and efficiency'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "x-twitter-intelligence-analyst",
+      "role": "'Social intelligence specialist for X/Twitter research, trend detection, account monitoring, and evidence-backed audience insights using public signals and structured data workflows.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "xiaohongshu-specialist",
+      "role": "'Expert Xiaohongshu marketing specialist focused on lifestyle content, trend-driven strategies, and authentic community engagement. Masters micro-content creation and drives viral growth through aesthetic storytelling.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "xr-cockpit-interaction-specialist",
+      "role": "'Specialist in designing and developing immersive cockpit-based control systems for XR environments'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "xr-immersive-developer",
+      "role": "'Expert WebXR and immersive technology developer with specialization in browser-based AR/VR/XR applications'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "xr-interface-architect",
+      "role": "'Spatial interaction designer and interface strategist for immersive AR/VR/XR environments'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "zhihu-strategist",
+      "role": "'Expert Zhihu marketing specialist focused on thought leadership, community credibility, and knowledge-driven engagement. Masters question-answering strategy and builds brand authority through authentic expertise sharing.'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "zk-steward",
+      "role": "'\"Knowledge-base steward in the spirit of Niklas Luhmann''s Zettelkasten. Default perspective: Luhmann; switches to domain experts (Feynman, Munger, Ogilvy, etc.) by task. Enforces atomic notes, connectivity, and validation loops. Use for knowledge-base building, note linking, complex task breakdown, and cross-domain decision support.\"'",
+      "tags": [
+        "imported"
+      ]
+    },
+    {
+      "file": "extension-hunter",
+      "role": "'Autonomous GitHub scout — finds public NEXUS/agent/skill/MCP power-ups without login and integrates them via the extend method. Use when a capability is missing or to periodically level up the agency.'",
+      "tags": [
+        "governance",
+        "import"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "dir": "sop",
+      "description": "Mandatory delivery playbook",
+      "tags": [
+        "process"
+      ]
+    },
+    {
+      "dir": "extend",
+      "description": "METHOD to add any capability managed/validated/registered",
+      "tags": [
+        "governance"
+      ]
+    },
+    {
+      "dir": "codebase-health",
+      "description": "Lint/typecheck/test gate + dead-code + updates",
+      "tags": [
+        "quality"
+      ]
+    },
+    {
+      "dir": "browser-autonomy",
+      "description": "Safe autonomous browser use",
+      "tags": [
+        "browser",
+        "autonomy"
+      ]
+    },
+    {
+      "dir": "browser",
+      "description": "Browser tooling helpers",
+      "tags": [
+        "browser"
+      ]
+    },
+    {
+      "dir": "deploy",
+      "description": "Deployment runbooks",
+      "tags": [
+        "deploy"
+      ]
+    },
+    {
+      "dir": "firebase",
+      "description": "Firebase workflows",
+      "tags": [
+        "backend",
+        "deploy"
+      ]
+    },
+    {
+      "dir": "supabase",
+      "description": "Supabase workflows",
+      "tags": [
+        "backend",
+        "db"
+      ]
+    },
+    {
+      "dir": "cpanel",
+      "description": "cPanel/Hostinger hosting",
+      "tags": [
+        "hosting"
+      ]
+    },
+    {
+      "dir": "memory",
+      "description": "Load user prefs at session start",
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "dir": "notify",
+      "description": "Telegram/notify at checkpoints",
+      "tags": [
+        "notify"
+      ]
+    },
+    {
+      "dir": "ponytail",
+      "description": "Lean-code discipline",
+      "tags": [
+        "lean"
+      ]
+    },
+    {
+      "dir": "bug-finder",
+      "description": "Locate bugs",
+      "tags": [
+        "debug"
+      ]
+    },
+    {
+      "dir": "bug-fixer",
+      "description": "Fix bugs",
+      "tags": [
+        "debug"
+      ]
+    },
+    {
+      "dir": "repo-manager",
+      "description": "Repo hygiene",
+      "tags": [
+        "repo"
+      ]
+    },
+    {
+      "dir": "rtl-aware-development",
+      "description": "RTL/i18n-aware UI dev",
+      "tags": [
+        "i18n",
+        "ui"
+      ]
+    },
+    {
+      "dir": "effect",
+      "description": "Effect TS patterns",
+      "tags": [
+        "architecture"
+      ]
+    },
+    {
+      "dir": "economy",
+      "description": "Runtime efficiency policy: smallest agent, cheapest model, concurrency cap, fallback",
+      "tags": [
+        "governance",
+        "efficiency"
+      ]
+    },
+    {
+      "dir": "self-improvement",
+      "description": "Learn from runs, propose upgrades via extend (controlled)",
+      "tags": [
+        "governance",
+        "learn"
+      ]
+    },
+    {
+      "dir": "amplify",
+      "description": "Force-multiplier: make a weak/cheap model produce high-tier work via decomposition, tool-offload, verify-fix loop",
+      "tags": [
+        "governance",
+        "efficiency"
+      ]
+    },
+    {
+      "dir": "auto-extend",
+      "description": "Discover public GitHub extensions (agents/skills/MCP) and integrate via extend, no login",
+      "tags": [
+        "governance",
+        "import"
+      ]
+    },
+    {
+      "dir": "collect-community",
+      "description": "Offline ledger + contribution loop: record local agent additions, PR the good ones to central NEXUS repo",
+      "tags": [
+        "governance",
+        "community"
+      ]
+    },
+    {
+      "dir": "harness",
+      "description": "DeepSeek Harness plugin architecture patterns: everything-is-a-plugin, event-sourced session log, bundle/profile composition, autonomous demand-driven data-center flow.",
+      "tags": [
+        "architecture",
+        "harness",
+        "plugin",
+        "event-sourced"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "ponytail",
+      "purpose": "Lean-code reminder"
+    },
+    {
+      "name": "commit",
+      "purpose": "Smart commit"
+    },
+    {
+      "name": "changelog",
+      "purpose": "Changelog generation"
+    },
+    {
+      "name": "issues",
+      "purpose": "Issue management"
+    },
+    {
+      "name": "learn",
+      "purpose": "Persist learnings to memory"
+    },
+    {
+      "name": "rmslop",
+      "purpose": "Remove slop/dead code"
+    },
+    {
+      "name": "spellcheck",
+      "purpose": "Spell check"
+    },
+    {
+      "name": "translate",
+      "purpose": "Translation helper"
+    },
+    {
+      "name": "ai-deps",
+      "purpose": "AI dependency helpers"
+    },
+    {
+      "name": "omniroute",
+      "purpose": "Launch bundled OmniRoute free gateway (keyless)"
+    }
+  ],
+  "routing": {
+    "note": "Orchestrator maps task type to agent by tags. To add capacity, run the extend skill; the orchestrator can then route to it."
+  }
+}

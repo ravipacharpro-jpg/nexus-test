@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@nexus-ai/core/*": ["../core/src/*"]
+    },
+    "rootDir": "../..",
+    "outDir": "dist",
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*.ts"]
+}

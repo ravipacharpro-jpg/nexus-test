@@ -1,0 +1,617 @@
+---
+title: CLI
+description: Opcje i polecenia wiersza poleceń NEXUS.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+CLI NEXUS domyślnie uruchamia [TUI](/docs/tui), gdy wywołasz je bez argumentów.
+
+```bash
+nexus
+```
+
+CLI obsługuje też polecenia opisane na tej stronie, więc możesz używać NEXUS programowo.
+
+```bash
+nexus run "Explain how closures work in JavaScript"
+```
+
+---
+
+### tui
+
+Uruchamia interfejs terminalowy (TUI) NEXUS.
+
+```bash
+nexus [project]
+```
+
+#### Flagi
+
+| Flaga                                    | Skrót | Opis                                                                    |
+| ---------------------------------------- | ----- | ----------------------------------------------------------------------- |
+| <nobr><code>{"--continue"}</code></nobr> | `-c`  | Kontynuuj ostatnią sesję                                                |
+| <nobr><code>{"--session"}</code></nobr>  | `-s`  | Identyfikator sesji do kontynuowania                                    |
+| <nobr><code>{"--fork"}</code></nobr>     |       | Sklonuj sesję podczas kontynuacji (użyj z `--continue` lub `--session`) |
+| <nobr><code>{"--prompt"}</code></nobr>   |       | Monit do użycia                                                         |
+| <nobr><code>{"--model"}</code></nobr>    | `-m`  | Model do użycia w formacie dostawca/model                               |
+| <nobr><code>{"--agent"}</code></nobr>    |       | Agent do użycia                                                         |
+| <nobr><code>{"--port"}</code></nobr>     |       | Port do nasłuchiwania                                                   |
+| <nobr><code>{"--hostname"}</code></nobr> |       | Nazwa hosta, do której należy się powiązać                              |
+
+---
+
+## Polecenia
+
+Interfejs CLI NEXUS zawiera także dodatkowe polecenia.
+
+---
+
+### agent
+
+Zarządzaj agentami NEXUS.
+
+```bash
+nexus agent [command]
+```
+
+---
+
+### attach
+
+Dołącz terminal do już działającego serwera backendu NEXUS uruchomionego za pomocą `serve` lub `web`.
+
+```bash
+nexus attach [url]
+```
+
+Pozwala to połączyć TUI ze zdalnym backendem NEXUS. Na przykład:
+
+```bash
+# Start the backend server for web/mobile access
+nexus web --port 4096 --hostname 0.0.0.0
+
+# In another terminal, attach the TUI to the running backend
+nexus attach http://10.20.30.40:4096
+```
+
+#### Flagi
+
+| Flaga                                    | Skrót | Opis                                                                                                  |
+| ---------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------- |
+| <nobr><code>{"--dir"}</code></nobr>      |       | Katalog roboczy, w którym uruchomić TUI                                                               |
+| <nobr><code>{"--continue"}</code></nobr> | `-c`  | Kontynuuj ostatnią sesję                                                                              |
+| <nobr><code>{"--session"}</code></nobr>  | `-s`  | Identyfikator sesji do kontynuowania                                                                  |
+| <nobr><code>{"--fork"}</code></nobr>     |       | Rozgałęź sesję podczas kontynuowania (użyj z `--continue` lub `--session`)                            |
+| <nobr><code>{"--password"}</code></nobr> | `-p`  | Hasło uwierzytelniania podstawowego (domyślnie `NEXUS_SERVER_PASSWORD`)                            |
+| <nobr><code>{"--username"}</code></nobr> | `-u`  | Nazwa użytkownika uwierzytelniania podstawowego (domyślnie `NEXUS_SERVER_USERNAME` lub `nexus`) |
+
+---
+
+#### create
+
+Utwórz nowego agenta z niestandardową konfiguracją.
+
+```bash
+nexus agent create
+```
+
+To polecenie poprowadzi Cię przez proces tworzenia nowego agenta z niestandardowym promptem systemowym i konfiguracją narzędzi.
+
+---
+
+#### list
+
+Wyświetl listę wszystkich agentów.
+
+```bash
+nexus agent list
+```
+
+---
+
+### auth
+
+Zarządzaj danymi uwierzytelniającymi i logowaniem dla dostawców.
+
+```bash
+nexus auth [command]
+```
+
+---
+
+#### login
+
+NEXUS integruje się z wieloma dostawcami. Możesz użyć `nexus auth login`, aby skonfigurować klucz API dla dowolnego obsługiwanego dostawcy. Klucze są bezpiecznie przechowywane w `~/.local/share/nexus/auth.json`.
+
+```bash
+nexus auth login
+```
+
+Podczas uruchamiania NEXUS ładuje dostawców z pliku poświadczeń, a także ze zmiennych środowiskowych lub pliku `.env` w Twoim projekcie.
+
+---
+
+#### list
+
+Wyświetl listę wszystkich uwierzytelnionych dostawców przechowywanych w pliku poświadczeń.
+
+```bash
+nexus auth list
+```
+
+Lub skrócona wersja:
+
+```bash
+nexus auth ls
+```
+
+---
+
+#### logout
+
+Wyloguj się z dostawcy, usuwając go z pliku poświadczeń.
+
+```bash
+nexus auth logout
+```
+
+---
+
+### github
+
+Zarządzaj agentem GitHub w celu automatyzacji repozytorium.
+
+```bash
+nexus github [command]
+```
+
+---
+
+#### install
+
+Zainstaluj agenta GitHub w swoim repozytorium.
+
+```bash
+nexus github install
+```
+
+Spowoduje to utworzenie pliku workflow GitHub Actions i poprowadzi Cię przez proces konfiguracji. [Dowiedz się więcej](/docs/github).
+
+---
+
+#### run
+
+Uruchom agenta na GitHubie. Zwykle używane w GitHub Actions.
+
+```bash
+nexus github run
+```
+
+##### Flagi
+
+| Flaga                                 | Opis                                     |
+| ------------------------------------- | ---------------------------------------- |
+| <nobr><code>{"--event"}</code></nobr> | Zdarzenie GitHub, które wyzwoliło agenta |
+| <nobr><code>{"--token"}</code></nobr> | Osobisty token dostępu GitHub            |
+
+---
+
+### mcp
+
+Zarządzaj serwerami Model Context Protocol (MCP).
+
+```bash
+nexus mcp [command]
+```
+
+---
+
+#### add
+
+Dodaj serwer MCP do swojej konfiguracji.
+
+```bash
+nexus mcp add
+```
+
+To polecenie poprowadzi Cię przez proces dodawania lokalnego lub zdalnego serwera MCP.
+
+---
+
+#### list
+
+Wyświetl listę wszystkich skonfigurowanych serwerów MCP i ich status.
+
+```bash
+nexus mcp list
+```
+
+Lub skrócona wersja:
+
+```bash
+nexus mcp ls
+```
+
+---
+
+#### auth
+
+Uwierzytelnij się w serwerze MCP z włączoną funkcją OAuth.
+
+```bash
+nexus mcp auth [name]
+```
+
+Jeśli nie podasz nazwy serwera, zostaniesz poproszony o wybranie jednego z serwerów wymagających uwierzytelnienia.
+
+Możesz także wyświetlić listę serwerów obsługujących OAuth i ich status uwierzytelnienia.
+
+```bash
+nexus mcp auth list
+```
+
+Lub skrócona wersja:
+
+```bash
+nexus mcp auth ls
+```
+
+---
+
+#### logout
+
+Usuń tokeny OAuth dla serwera MCP.
+
+```bash
+nexus mcp logout [name]
+```
+
+---
+
+#### debug
+
+Debuguj problemy z połączeniem OAuth dla serwera MCP.
+
+```bash
+nexus mcp debug <name>
+```
+
+---
+
+### models
+
+Wyświetl listę modeli ze wszystkich skonfigurowanych dostawców.
+
+```bash
+nexus models [provider]
+```
+
+Pokazuje modele dostępne do użycia w `provider/model`.
+
+Jest to identyfikator modelu, którego używasz w [konfiguracji](/docs/config).
+
+Opcjonalnie możesz podać identyfikator dostawcy, aby filtrować modele według tego dostawcy.
+
+```bash
+nexus models anthropic
+```
+
+#### Flagi
+
+| Flaga                                   | Opis                                                                            |
+| --------------------------------------- | ------------------------------------------------------------------------------- |
+| <nobr><code>{"--refresh"}</code></nobr> | Odśwież pamięć podręczną modeli                                                 |
+| <nobr><code>{"--verbose"}</code></nobr> | Bardziej szczegółowe dane wyjściowe modelu (zawiera metadane, takie jak koszty) |
+
+Użyj flagi `--refresh`, aby zaktualizować listę modeli w pamięci podręcznej. Jest to przydatne, gdy dostawca dodał nowe modele, które chcesz zobaczyć w NEXUS.
+
+```bash
+nexus models --refresh
+```
+
+---
+
+### run
+
+Uruchom NEXUS w trybie nieinteraktywnym, przekazując bezpośrednio prompt.
+
+```bash
+nexus run [message..]
+```
+
+Jest to przydatne do tworzenia skryptów, automatyzacji lub gdy chcesz wysłać szybkie zapytanie bez uruchamiania TUI. Na przykład:
+
+```bash "nexus run"
+nexus run Explain the use of context in Go
+```
+
+Można również użyć tego z działającym `nexus serve`, aby uniknąć zimnego startu serwera MCP przy każdym uruchomieniu:
+
+```bash
+# Start a headless server in one terminal
+nexus serve
+
+# In another terminal, run commands that attach to it
+nexus run --attach http://localhost:4096 "Explain async/await in JavaScript"
+```
+
+#### Flagi
+
+| Flaga                                    | Skrót | Opis                                                                                                  |
+| ---------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------- |
+| <nobr><code>{"--command"}</code></nobr>  |       | Polecenie do uruchomienia, reszta to argumenty                                                        |
+| <nobr><code>{"--continue"}</code></nobr> | `-c`  | Kontynuuj ostatnią sesję                                                                              |
+| <nobr><code>{"--session"}</code></nobr>  | `-s`  | Identyfikator sesji do kontynuowania                                                                  |
+| <nobr><code>{"--fork"}</code></nobr>     |       | Sklonuj sesję podczas kontynuacji (użyj z `--continue` lub `--session`)                               |
+| <nobr><code>{"--share"}</code></nobr>    |       | Udostępnij sesję po zakończeniu                                                                       |
+| <nobr><code>{"--model"}</code></nobr>    | `-m`  | Model do użycia w formacie dostawca/model                                                             |
+| <nobr><code>{"--agent"}</code></nobr>    |       | Agent do użycia                                                                                       |
+| <nobr><code>{"--file"}</code></nobr>     | `-f`  | Pliki do załączenia do wiadomości                                                                     |
+| <nobr><code>{"--format"}</code></nobr>   |       | Format wyjściowy: `default` (sformatowany) lub `json` (surowy JSON)                                   |
+| <nobr><code>{"--title"}</code></nobr>    |       | Tytuł sesji (jeśli nie podano, zostanie wygenerowany z promptu)                                       |
+| <nobr><code>{"--attach"}</code></nobr>   |       | Dołącz do działającego serwera NEXUS (np. http://localhost:4096)                                   |
+| <nobr><code>{"--password"}</code></nobr> | `-p`  | Hasło uwierzytelniania podstawowego (domyślnie `NEXUS_SERVER_PASSWORD`)                            |
+| <nobr><code>{"--username"}</code></nobr> | `-u`  | Nazwa użytkownika uwierzytelniania podstawowego (domyślnie `NEXUS_SERVER_USERNAME` lub `nexus`) |
+| <nobr><code>{"--dir"}</code></nobr>      |       | Katalog do uruchomienia lub ścieżka na zdalnym serwerze podczas dołączania                            |
+| <nobr><code>{"--variant"}</code></nobr>  |       | Wariant modelu (poziom wnioskowania specyficzny dla dostawcy)                                         |
+| <nobr><code>{"--thinking"}</code></nobr> |       | Pokaż bloki myślenia                                                                                  |
+| <nobr><code>{"--port"}</code></nobr>     |       | Port dla serwera lokalnego (domyślnie losowy)                                                         |
+
+---
+
+### serve
+
+Uruchom serwer NEXUS (bez interfejsu) w celu uzyskania dostępu do API. Pełny opis API HTTP znajduje się w [dokumentacji serwera](/docs/server).
+
+```bash
+nexus serve
+```
+
+Uruchamia to serwer HTTP, który zapewnia dostęp do API NEXUS bez interfejsu TUI. Ustaw `NEXUS_SERVER_PASSWORD`, aby włączyć podstawowe uwierzytelnianie HTTP (domyślna nazwa użytkownika to `nexus`).
+
+#### Flagi
+
+| Flaga                                    | Opis                                       |
+| ---------------------------------------- | ------------------------------------------ |
+| <nobr><code>{"--port"}</code></nobr>     | Port do nasłuchiwania                      |
+| <nobr><code>{"--hostname"}</code></nobr> | Nazwa hosta, do której należy się powiązać |
+| <nobr><code>{"--mdns"}</code></nobr>     | Włącz wykrywanie mDNS                      |
+| <nobr><code>{"--cors"}</code></nobr>     | Dodatkowe dozwolone źródła CORS            |
+
+---
+
+### session
+
+Zarządzaj sesjami NEXUS.
+
+```bash
+nexus session [command]
+```
+
+---
+
+#### list
+
+Lista wszystkich sesji NEXUS.
+
+```bash
+nexus session list
+```
+
+##### Flagi
+
+| Flaga                                     | Skrót | Opis                                       |
+| ----------------------------------------- | ----- | ------------------------------------------ |
+| <nobr><code>{"--max-count"}</code></nobr> | `-n`  | Ogranicz do ostatnich N sesji              |
+| <nobr><code>{"--format"}</code></nobr>    |       | Format wyjściowy: tabela lub json (tabela) |
+
+---
+
+### stats
+
+Pokaż statystyki wykorzystania tokenów i sesji NEXUS.
+
+```bash
+nexus stats
+```
+
+#### Flagi
+
+| Flaga                                   | Opis                                                                                  |
+| --------------------------------------- | ------------------------------------------------------------------------------------- |
+| <nobr><code>{"--days"}</code></nobr>    | Pokaż statystyki z ostatnich N dni (domyślnie: cały czas)                             |
+| <nobr><code>{"--tools"}</code></nobr>   | Pokaż użycie poszczególnych narzędzi (domyślnie: wszystkie)                           |
+| <nobr><code>{"--models"}</code></nobr>  | Pokaż podział na modele (domyślnie ukryty). Podaj liczbę, aby pokazać N najczęstszych |
+| <nobr><code>{"--project"}</code></nobr> | Filtruj według projektu (domyślnie: wszystkie projekty, pusty ciąg: bieżący projekt)  |
+
+---
+
+### export
+
+Eksportuj dane sesji jako JSON.
+
+```bash
+nexus export [sessionID]
+```
+
+Jeśli nie podasz identyfikatora sesji, zostaniesz poproszony o wybranie jednej z ostatnich sesji.
+
+---
+
+### import
+
+Importuj dane sesji z pliku JSON lub adresu URL udostępniania NEXUS.
+
+```bash
+nexus import <file>
+```
+
+Możesz importować z pliku lokalnego lub adresu URL.
+
+```bash
+nexus import session.json
+nexus import https://opncd.ai/s/abc123
+```
+
+---
+
+### web
+
+Uruchom serwer NEXUS z interfejsem internetowym.
+
+```bash
+nexus web
+```
+
+Uruchamia to serwer HTTP i udostępnia NEXUS przez interfejs przeglądarkowy. Ustaw `NEXUS_SERVER_PASSWORD`, aby włączyć podstawowe uwierzytelnianie HTTP (domyślna nazwa użytkownika to `nexus`).
+
+#### Flagi
+
+| Flaga                                    | Opis                                       |
+| ---------------------------------------- | ------------------------------------------ |
+| <nobr><code>{"--port"}</code></nobr>     | Port do nasłuchiwania                      |
+| <nobr><code>{"--hostname"}</code></nobr> | Nazwa hosta, do której należy się powiązać |
+| <nobr><code>{"--mdns"}</code></nobr>     | Włącz wykrywanie mDNS                      |
+| <nobr><code>{"--cors"}</code></nobr>     | Dodatkowe dozwolone źródła CORS            |
+
+---
+
+### acp
+
+Uruchom serwer ACP (Agent Client Protocol).
+
+```bash
+nexus acp
+```
+
+Uruchamia serwer ACP, który komunikuje się przez stdin/stdout przy użyciu JSON-RPC.
+
+#### Flagi
+
+| Flaga                                    | Opis                                       |
+| ---------------------------------------- | ------------------------------------------ |
+| <nobr><code>{"--cwd"}</code></nobr>      | Katalog roboczy                            |
+| <nobr><code>{"--port"}</code></nobr>     | Port do nasłuchiwania                      |
+| <nobr><code>{"--hostname"}</code></nobr> | Nazwa hosta, do której należy się powiązać |
+
+---
+
+### uninstall
+
+Odinstaluj NEXUS i usuń wszystkie powiązane pliki.
+
+```bash
+nexus uninstall
+```
+
+#### Flagi
+
+| Flaga                                       | Skrót | Opis                          |
+| ------------------------------------------- | ----- | ----------------------------- |
+| <nobr><code>{"--keep-config"}</code></nobr> | `-c`  | Zachowaj pliki konfiguracyjne |
+| <nobr><code>{"--keep-data"}</code></nobr>   | `-d`  | Zachowaj dane sesji i migawki |
+| <nobr><code>{"--dry-run"}</code></nobr>     |       | Pokaż co zostanie usunięte    |
+| <nobr><code>{"--force"}</code></nobr>       | `-f`  | Pomiń monity o potwierdzenie  |
+
+---
+
+### upgrade
+
+Aktualizuj NEXUS do najnowszej lub określonej wersji.
+
+```bash
+nexus upgrade [target]
+```
+
+Aby zaktualizować do najnowszej wersji:
+
+```bash
+nexus upgrade
+```
+
+Aby zaktualizować do konkretnej wersji:
+
+```bash
+nexus upgrade v0.1.48
+```
+
+#### Flagi
+
+| Flaga                                  | Skrót | Opis                                                |
+| -------------------------------------- | ----- | --------------------------------------------------- |
+| <nobr><code>{"--method"}</code></nobr> | `-m`  | Wymuś metodę instalacji: curl, npm, pnpm, bun, brew |
+
+---
+
+## Flagi globalne
+
+Interfejs CLI NEXUS przyjmuje następujące flagi globalne dla każdego polecenia.
+
+| Flaga                                      | Skrót | Opis                                        |
+| ------------------------------------------ | ----- | ------------------------------------------- |
+| <nobr><code>{"--help"}</code></nobr>       | `-h`  | Wyświetl pomoc                              |
+| <nobr><code>{"--version"}</code></nobr>    | `-v`  | Wydrukuj numer wersji                       |
+| <nobr><code>{"--print-logs"}</code></nobr> |       | Drukuj logi na stderr                       |
+| <nobr><code>{"--log-level"}</code></nobr>  |       | Poziom logowania (DEBUG, INFO, WARN, ERROR) |
+
+---
+
+## Zmienne środowiskowe
+
+NEXUS można skonfigurować za pomocą zmiennych środowiskowych.
+
+| Zmienna                               | Typ     | Opis                                                       |
+| ------------------------------------- | ------- | ---------------------------------------------------------- |
+| `NEXUS_AUTO_SHARE`                 | boolean | Automatycznie udostępniaj sesje                            |
+| `NEXUS_GIT_BASH_PATH`              | string  | Ścieżka do pliku wykonywalnego Git Bash w systemie Windows |
+| `NEXUS_CONFIG`                     | string  | Ścieżka do pliku konfiguracyjnego                          |
+| `NEXUS_TUI_CONFIG`                 | string  | Ścieżka do pliku konfiguracyjnego TUI                      |
+| `NEXUS_CONFIG_DIR`                 | string  | Ścieżka do katalogu konfiguracyjnego                       |
+| `NEXUS_CONFIG_CONTENT`             | string  | Treść konfiguracji JSON (inline)                           |
+| `NEXUS_DISABLE_AUTOUPDATE`         | boolean | Wyłącz automatyczne sprawdzanie aktualizacji               |
+| `NEXUS_DISABLE_PRUNE`              | boolean | Wyłącz czyszczenie starych wyników (pruning)               |
+| `NEXUS_DISABLE_TERMINAL_TITLE`     | boolean | Wyłącz automatyczne ustawianie tytułu terminala            |
+| `NEXUS_PERMISSION`                 | string  | Konfiguracja uprawnień w JSON (inline)                     |
+| `NEXUS_DISABLE_DEFAULT_PLUGINS`    | boolean | Wyłącz domyślne wtyczki                                    |
+| `NEXUS_DISABLE_LSP_DOWNLOAD`       | boolean | Wyłącz automatyczne pobieranie serwerów LSP                |
+| `NEXUS_ENABLE_EXPERIMENTAL_MODELS` | boolean | Włącz modele eksperymentalne                               |
+| `NEXUS_DISABLE_AUTOCOMPACT`        | boolean | Wyłącz automatyczne kompaktowanie kontekstu                |
+| `NEXUS_DISABLE_CLAUDE_CODE`        | boolean | Wyłącz integrację z `.claude` (prompt + skills)            |
+| `NEXUS_DISABLE_CLAUDE_CODE_PROMPT` | boolean | Wyłącz czytanie `~/.claude/CLAUDE.md`                      |
+| `NEXUS_DISABLE_CLAUDE_CODE_SKILLS` | boolean | Wyłącz ładowanie `.claude/skills`                          |
+| `NEXUS_DISABLE_MODELS_FETCH`       | boolean | Wyłącz pobieranie modeli ze źródeł zewnętrznych            |
+| `NEXUS_FAKE_VCS`                   | string  | Fałszywy dostawca VCS do celów testowych                   |
+| `NEXUS_CLIENT`                     | string  | Identyfikator klienta (domyślnie `cli`)                    |
+| `NEXUS_ENABLE_EXA`                 | boolean | Włącz narzędzie wyszukiwania internetowego Exa             |
+| `NEXUS_SERVER_PASSWORD`            | string  | Włącz uwierzytelnianie podstawowe dla `serve`/`web`        |
+| `NEXUS_SERVER_USERNAME`            | string  | Nazwa użytkownika do autoryzacji (domyślnie `nexus`)    |
+| `NEXUS_MODELS_URL`                 | string  | Niestandardowy adres URL do pobierania konfiguracji modeli |
+
+---
+
+### Eksperymentalne
+
+Te zmienne włączają funkcje eksperymentalne, które mogą ulec zmianie lub zostać usunięte.
+
+| Zmienna                                         | Typ     | Opis                                                |
+| ----------------------------------------------- | ------- | --------------------------------------------------- |
+| `NEXUS_EXPERIMENTAL`                         | boolean | Włącz funkcje eksperymentalne objęte flagą zbiorczą |
+| `NEXUS_EXPERIMENTAL_ICON_DISCOVERY`          | boolean | Włącz wykrywanie ikon                               |
+| `NEXUS_EXPERIMENTAL_DISABLE_COPY_ON_SELECT`  | boolean | Wyłącz kopiowanie przy zaznaczaniu w TUI            |
+| `NEXUS_EXPERIMENTAL_BASH_DEFAULT_TIMEOUT_MS` | number  | Domyślny limit czasu dla narzędzia bash w ms        |
+| `NEXUS_EXPERIMENTAL_OUTPUT_TOKEN_MAX`        | number  | Maksymalne tokeny wyjściowe dla LLM                 |
+| `NEXUS_EXPERIMENTAL_FILEWATCHER`             | boolean | Włącz obserwatora plików dla całego katalogu        |
+| `NEXUS_EXPERIMENTAL_OXFMT`                   | boolean | Włącz formater oxfmt                                |
+| `NEXUS_EXPERIMENTAL_LSP_TOOL`                | boolean | Włącz eksperymentalne narzędzie LSP                 |
+| `NEXUS_EXPERIMENTAL_DISABLE_FILEWATCHER`     | boolean | Wyłącz obserwatora plików                           |
+| `NEXUS_EXPERIMENTAL_EXA`                     | boolean | Włącz funkcje eksperymentalne Exa                   |
+| `NEXUS_EXPERIMENTAL_LSP_TY`                  | boolean | Włącz TY LSP dla plików python                      |
+| `NEXUS_EXPERIMENTAL_PLAN_MODE`               | boolean | Włącz tryb planowania                               |
+| `NEXUS_EXPERIMENTAL_BACKGROUND_SUBAGENTS`    | boolean | Włącz zadania subagentów w tle                      |
+| `NEXUS_EXPERIMENTAL_EVENT_SYSTEM`            | boolean | Włącz eksperymentalny system zdarzeń                |
+| `NEXUS_EXPERIMENTAL_NATIVE_LLM`              | boolean | Włącz natywną ścieżkę żądań LLM                     |
+| `NEXUS_EXPERIMENTAL_PARALLEL`                | boolean | Włącz równoległe wykonywanie wyszukiwania web       |
+| `NEXUS_EXPERIMENTAL_SCOUT`                   | boolean | Włącz subagenta Scout                               |
+| `NEXUS_EXPERIMENTAL_WORKSPACES`              | boolean | Włącz obsługę obszarów roboczych                    |

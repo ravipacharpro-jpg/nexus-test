@@ -1,0 +1,35 @@
+{
+  "$schema": "https://nexus.ai/desktop-theme.json",
+  "name": "NEXUS",
+  "id": "nexus",
+  "light": {
+    "palette": {
+      "neutral": "#ffffff",
+      "ink": "#1a1a1a",
+      "primary": "#3b7dd8",
+      "accent": "#7b5bb6",
+      "success": "#3d9a57",
+      "warning": "#d68c27",
+      "error": "#d1383d",
+      "info": "#318795",
+      "interactive": "#3b7dd8",
+      "diffAdd": "#1e725c",
+      "diffDelete": "#c53b53"
+    }
+  },
+  "dark": {
+    "palette": {
+      "neutral": "#070a0f",
+      "ink": "#f2f5f7",
+      "primary": "#00d4ff",
+      "accent": "#b47cff",
+      "success": "#39d98a",
+      "warning": "#ffd43b",
+      "error": "#ff626b",
+      "info": "#a7b0bc",
+      "interactive": "#00d4ff",
+      "diffAdd": "#39d98a",
+      "diffDelete": "#ff626b"
+    }
+  }
+}

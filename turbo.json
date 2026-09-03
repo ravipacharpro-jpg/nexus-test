@@ -1,0 +1,33 @@
+{
+  "$schema": "https://v2-8-13.turborepo.dev/schema.json",
+  "globalEnv": ["CI", "NEXUS_DISABLE_SHARE"],
+  "globalPassThroughEnv": ["CI", "NEXUS_DISABLE_SHARE"],
+  "tasks": {
+    "typecheck": {},
+    "build": {
+      "dependsOn": [],
+      "outputs": ["dist/**"]
+    },
+    "nexus#test": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "passThroughEnv": ["*"]
+    },
+    "@nexus-ai/core#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@nexus-ai/app#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@nexus-ai/ui#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@nexus-ai/session-ui#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    }
+  }
+}

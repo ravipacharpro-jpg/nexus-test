@@ -1,0 +1,8 @@
+{
+  "name": "missing-file",
+  "input": "/nonexistent/path/to/asset.pak",
+  "expected": {
+    "exists": false,
+    "summary": "does not exist"
+  }
+}

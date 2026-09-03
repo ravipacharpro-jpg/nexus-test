@@ -1,0 +1,8 @@
+{
+  "name": "small-script",
+  "input": "print(\"hello\")",
+  "expected": {
+    "length": 14,
+    "summary": "formatted 14 chars"
+  }
+}

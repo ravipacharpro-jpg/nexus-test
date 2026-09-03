@@ -1,0 +1,8 @@
+{
+  "name": "empty-input",
+  "input": "",
+  "expected": {
+    "ok": false,
+    "limitations": "any-non-empty"
+  }
+}

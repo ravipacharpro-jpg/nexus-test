@@ -1,0 +1,20 @@
+{
+  "provider": {
+    "offline": {
+      "name": "Offline Local LLM (llama.cpp / Ollama)",
+      "api": "http://localhost:8080/v1",
+      "npm": "@ai-sdk/openai-compatible",
+      "env": [],
+      "models": {
+        "local/auto": {
+          "id": "local/auto",
+          "name": "On-device GGUF model (no API, no internet)",
+          "reasoning": false,
+          "tool_call": true,
+          "modalities": { "input": ["text"], "output": ["text"] }
+        }
+      }
+    }
+  },
+  "model": "offline/local/auto"
+}
