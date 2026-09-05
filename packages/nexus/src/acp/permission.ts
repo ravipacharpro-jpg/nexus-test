@@ -53,6 +53,14 @@ export class Handler {
     const session = await Effect.runPromise(this.input.session.tryGet(permission.sessionID))
     if (!session) return
 
+    // Read-only shell commands (pwd, ls, git status, --version checks)
+    // auto-allow bina prompt ke — har baar thoda alag command string
+    // aane se "Always allow" match nahi hota tha aur loop banta tha.
+    if (isReadOnlyShell(permission.permission, permission.metadata)) {
+      await this.reply(permission.id, "once", session.cwd)
+      return
+    }
+
     if (!this.input.connection.requestPermission) {
       await this.reply(permission.id, "reject", session.cwd)
       return
@@ -220,6 +228,62 @@ function selectedReply(result: RequestPermissionResponse): Reply {
   if (result.outcome.outcome !== "selected") return "reject"
   if (result.outcome.optionId === "once" || result.outcome.optionId === "always") return result.outcome.optionId
   return "reject"
+}
+
+// Read-only shell allowlist: tester ke repeat hone wale commands
+// (pwd, ls, echo, git status/diff/rev-parse, --version) bina prompt chale.
+const READONLY_BINARIES = ["echo", "pwd", "ls", "git", "node", "python3", "python", "bun", "grep", "head", "wc", "true"]
+const READONLY_GIT = ["status", "diff", "rev-parse", "log", "show", "branch", "--version"]
+const DANGEROUS_TOKENS = [
+  "rm ",
+  "rmdir",
+  "mv ",
+  "cp ",
+  "mkdir",
+  "touch ",
+  "chmod",
+  "chown",
+  "dd ",
+  "mkfs",
+  "sudo",
+  "ssh ",
+  ">",
+  "| sh",
+  "| bash",
+  "curl ",
+  "wget ",
+  "shutdown",
+  "reboot",
+]
+
+function isReadOnlyShell(toolName: string, input: ToolInput): boolean {
+  const tool = toolName.toLocaleLowerCase().replace(/[-_]/g, " ").trim()
+  if (tool !== "bash" && tool !== "shell" && tool !== "shell command") return false
+  const command = stringValue(input.command) ?? stringValue(input.cmd)
+  if (!command || command.length > 2000) return false
+  const lower = command.toLocaleLowerCase()
+  if (DANGEROUS_TOKENS.some((token) => lower.includes(token))) return false
+  const segments = command
+    .split(/;|&&|\|\||\||\n/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+  if (!segments.length) return false
+  return segments.every((segment) => {
+    const binary = segment.split(/\s+/)[0]?.toLocaleLowerCase().replace(/^\/.*\//, "") ?? ""
+    if (!READONLY_BINARIES.includes(binary)) return false
+    if (binary === "git") {
+      const sub = segment.split(/\s+/).find((word) => !word.startsWith("-") && word !== "git" && !word.startsWith("/") && !word.startsWith('"') && !word.startsWith("'"))
+      if (!sub) return true
+      // git -C <path> <subcommand> form ko bhi allow karo
+      const words = segment.split(/\s+/).filter((word) => !word.startsWith('"') && !word.startsWith("'"))
+      const gitIndex = words.findIndex((word) => word.toLocaleLowerCase() === "git" || word.endsWith("/git"))
+      const afterGit = words.slice(gitIndex + 1).filter((word) => !word.startsWith("-") && !word.startsWith("/") && word !== "-C")
+      // -C ke path ko skip karo: pehla non-flag path ke baad wala subcommand dekho
+      const subcommand = afterGit.length > 1 && words.includes("-C") ? afterGit[afterGit.length - 1] : afterGit[0]
+      return !subcommand || READONLY_GIT.includes(subcommand.toLocaleLowerCase())
+    }
+    return true
+  })
 }
 
 function stringValue(value: unknown) {

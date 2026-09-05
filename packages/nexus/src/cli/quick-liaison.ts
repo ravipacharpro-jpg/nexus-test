@@ -6,7 +6,7 @@ const assistantPluginAliases = new Set([
 ])
 
 const knownCommands = new Set([
-  "acp", "agent", "api", "asset", "assistant", "attach", "bot", "completion", "config", "console", "db", "debug", "dev", "do", "export", "generate", "github", "import", "intent", "liaison", "mcp", "mod", "models", "pr", "providers", "run", "serve", "session", "setup", "stats", "tui", "uninstall", "upgrade", "web", ...assistantPluginAliases,
+  "acp", "agent", "api", "artifact", "asset", "assistant", "attach", "bot", "completion", "config", "console", "db", "debug", "dev", "device", "do", "doctor", "export", "generate", "github", "import", "instructions", "intent", "liaison", "lua", "mcp", "memories", "memory", "mod", "models", "onboard", "permission", "plugin", "pr", "profile", "providers", "run", "serve", "session", "setup", "stats", "translator", "tui", "uninstall", "upgrade", "web", "workspace", ...assistantPluginAliases,
 ])
 
 /**

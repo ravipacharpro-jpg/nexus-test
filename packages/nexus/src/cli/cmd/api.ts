@@ -417,21 +417,11 @@ const ReadinessCommand = cmd({
   },
 })
 
-const WizardDefault = cmd({
-  command: "$0",
-  describe: "open the multi-provider API key wizard",
-  builder: (yargs: Argv) => yargs,
-  async handler() {
-    await runWizard()
-  },
-})
-
 export const ApiCommand = cmd({
   command: "api",
   describe: "manage API keys and smart model routing",
   builder: (yargs: Argv) =>
     yargs
-      .command(WizardDefault)
       .command(AddCommand)
       .command(ListCommand)
       .command(BudgetCommand)
