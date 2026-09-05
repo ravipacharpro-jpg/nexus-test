@@ -86,3 +86,19 @@ export function formatVaultSummary(s: VaultSummary): string {
   }
   return lines.join("\n")
 }
+
+/** Shape expected by health-check.ts (provider names + totals). */
+export function readVaultSummary(): {
+  totalActive: number
+  totalKeys: number
+  providers: string[]
+  path: string
+} {
+  const s = getVaultSummary()
+  return {
+    totalActive: s.activeKeys,
+    totalKeys: s.totalKeys,
+    providers: s.breakdown.map((b) => b.provider),
+    path: s.path,
+  }
+}

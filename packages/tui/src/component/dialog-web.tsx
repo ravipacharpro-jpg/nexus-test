@@ -19,8 +19,8 @@
 import { createMemo, createResource, Show } from "solid-js"
 import { useTheme } from "../context/theme"
 import { useDialog } from "../ui/dialog"
-import { browser } from "../../assistant/src/plugins/autofarm/lib/browser.ts"
-import { isBrowserUseAvailable } from "../../assistant/src/plugins/autofarm/lib/browser-use.ts"
+import { browser } from "../../../assistant/src/plugins/autofarm/lib/browser.ts"
+import { isBrowserUseAvailable } from "../../../assistant/src/plugins/autofarm/lib/browser-use.ts"
 
 export function WebLaunchDialog() {
   const { theme } = useTheme()
